@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BeansBay</string>
+    <string name="project_name">Beans Bay</string>
+    <string name="tagline">Where Beans Meet Its Bay!</string>
+    <string name="team_id">Product by C23-PS434</string>
+    <string name="greetings">Hello there! Hows your day?</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="today_s_n_recommendation">Today\'s \n Recommendation</string>
+    <string name="by_beansbay">by BeansBay</string>
+</resources>
