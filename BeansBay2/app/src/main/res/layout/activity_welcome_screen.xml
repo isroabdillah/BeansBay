@@ -66,8 +66,7 @@
             android:textColor="@color/black"
             android:padding="12dp"
             android:text="@string/sign_in"
-            android:shadowColor="@color/black"
-            />
+            android:shadowColor="@color/black" />
 
         <Button
             android:layout_marginTop="12dp"
@@ -81,8 +80,6 @@
             android:padding="12dp"
             />
     </LinearLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

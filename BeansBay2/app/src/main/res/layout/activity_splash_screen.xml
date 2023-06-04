@@ -50,17 +50,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="24dp"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:src="@drawable/bottom_logo"
-            android:layout_marginBottom="12dp"
-            />
-
+            android:layout_marginBottom="12dp" />
 
         <TextView
             android:layout_width="wrap_content"
