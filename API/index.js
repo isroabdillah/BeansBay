@@ -1,7 +1,7 @@
 const express = require("express");
 const session = require("express-session");
 const app = express();
-const port = 3000;
+const port = 8080;
 
 const dotenv = require("dotenv");
 dotenv.config();
@@ -32,93 +32,6 @@ app.use(
     saveUninitialized: true,
   })
 );
-
-// Middleware untuk mengatur sesi
-app.use(
-  session({
-    secret: "rahasia", // Ganti dengan kunci rahasia yang lebih kuat
-    resave: false,
-    saveUninitialized: true,
-  })
-);
-
-// Middleware untuk memeriksa status login pengguna
-function checkLogin(req, res, next) {
-  if (req.session.user && req.session.user.loggedIn) {
-    // Lanjutkan ke handler berikutnya jika pengguna sudah login
-    next();
-  } else {
-    res.status(401).json({ message: "Silakan login terlebih dahulu" });
-  }
-}
-
-// Middleware untuk memeriksa token otentikasi
-function authenticateToken(req, res, next) {
-  const token = req.header("Authorization");
-
-  if (!token) {
-    return res.status(401).json({ error: "Token otentikasi diperlukan" });
-  }
-
-  jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
-    if (err) {
-      return res.status(403).json({ error: "Token otentikasi tidak valid" });
-    }
-
-    req.user = decoded;
-    next();
-  });
-}
-
-// Handler untuk memeriksa status login pengguna
-app.get("/api/check-login", checkLogin, (req, res) => {
-  res.json({ loggedIn: true, message: "Pengguna sudah login" });
-});
-
-// Endpoint untuk refresh token
-app.post("/api/refresh-token", (req, res) => {
-  const refreshToken = req.body.refreshToken;
-
-  // Verifikasi refresh token
-  jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
-    if (err) {
-      return res.status(403).json({ error: "Refresh token tidak valid" });
-    }
-
-    // Buat token JWT baru
-    const userId = decoded.userId;
-    const newToken = jwt.sign({ userId }, process.env.ACCESS_TOKEN_SECRET, {
-      expiresIn: process.env.ACCESS_TOKEN_EXPIRY,
-    });
-
-    res.json({ token: newToken });
-  });
-});
-
-// Endpoint yang memerlukan autentikasi
-app.get("/api/user", authenticateToken, (req, res) => {
-  // Pengguna berhasil melewati autentikasi, lakukan operasi yang diperlukan
-  // contoh: mengambil data pengguna dari database
-  const userId = req.user.userId;
-
-  db.collection("users")
-    .doc(userId)
-    .get()
-    .then((doc) => {
-      if (doc.exists) {
-        const user = doc.data();
-        res.json(user);
-      } else {
-        res.status(404).json({ error: "Pengguna tidak ditemukan" });
-      }
-    })
-    .catch((error) => {
-      console.error("Terjadi kesalahan saat mengambil data pengguna:", error);
-      res
-        .status(500)
-        .json({ error: "Terjadi kesalahan saat mengambil data pengguna" });
-    });
-});
 
 app.use(express.json());
 let users = [];
@@ -156,6 +69,101 @@ function verifyAccessToken(accessToken) {
   }
 }
 
+// Middleware untuk memeriksa token otentikasi
+function authenticateToken(req, res, next) {
+  const token = req.header("Authorization");
+
+  if (!token) {
+    return res.status(401).json({ error: "Token otentikasi diperlukan" });
+  }
+
+  jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
+    if (err) {
+      return res.status(403).json({ error: "Token otentikasi tidak valid" });
+    }
+
+    req.user = decoded;
+    next();
+  });
+}
+
+// Middleware untuk mengatur sesi
+app.use(
+  session({
+    secret: "rahasia", // Ganti dengan kunci rahasia yang lebih kuat
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
+// Middleware untuk memeriksa status login pengguna
+function checkLogin(req, res, next) {
+  if (req.session.user && req.session.user.loggedIn) {
+    // Lanjutkan ke handler berikutnya jika pengguna sudah login
+    next();
+  } else {
+    res.status(401).json({ message: "Silakan login terlebih dahulu" });
+  }
+}
+
+// Endpoint yang memerlukan autentikasi
+app.get("/api/user", authenticateToken, (req, res) => {
+  // Pengguna berhasil melewati autentikasi, lakukan operasi yang diperlukan
+  // contoh: mengambil data pengguna dari database
+  const userId = req.user.userId;
+
+  db.collection("users")
+    .doc(userId)
+    .get()
+    .then((doc) => {
+      if (doc.exists) {
+        const user = doc.data();
+        res.json(user);
+      } else {
+        res.status(404).json({ error: "Pengguna tidak ditemukan" });
+      }
+    })
+    .catch((error) => {
+      console.error("Terjadi kesalahan saat mengambil data pengguna:", error);
+      res
+        .status(500)
+        .json({ error: "Terjadi kesalahan saat mengambil data pengguna" });
+    });
+});
+
+// Endpoint untuk refresh token
+app.post("/api/refresh-token", (req, res) => {
+  const refreshToken = req.body.refreshToken;
+
+  // Verifikasi refresh token
+  jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
+    if (err) {
+      return res.status(403).json({ error: "Refresh token tidak valid" });
+    }
+
+    // Buat token JWT baru
+    const userId = decoded.userId;
+    const newToken = jwt.sign({ userId }, process.env.ACCESS_TOKEN_SECRET, {
+      expiresIn: process.env.ACCESS_TOKEN_EXPIRY,
+    });
+
+    res.json({ token: newToken });
+  });
+});
+
+// Handler untuk memeriksa status login pengguna
+app.get("/api/check-login", checkLogin, (req, res) => {
+  res.json({ loggedIn: true, message: "Pengguna sudah login" });
+});
+
+// Handler untuk logout pengguna
+app.post("/api/logout", (req, res) => {
+  // Hapus data login pengguna dari sesi
+  req.session.destroy();
+
+  res.json({ message: "Logout berhasil" });
+});
+
 // Pencarian produk berdasarkan nama
 app.get("/api/products/search", (req, res) => {
   const { name } = req.query;
@@ -166,13 +174,14 @@ app.get("/api/products/search", (req, res) => {
   }
 
   db.collection("products")
-    .where("name", "==", name)
     .get()
     .then((snapshot) => {
       const products = [];
       snapshot.forEach((doc) => {
         const product = doc.data();
-        products.push(product);
+        if (product.namaProduk.toLowerCase().includes(name.toLowerCase())) {
+          products.push(product);
+        }
       });
       res.json(products);
     })
@@ -199,29 +208,6 @@ app.get("/api/products", (req, res) => {
       res
         .status(500)
         .json({ error: "Terjadi kesalahan saat mengambil produk" });
-    });
-});
-
-// Mendapatkan detail produk berdasarkan ID
-app.get("/api/products/:id", (req, res) => {
-  const id = req.params.id;
-
-  db.collection("products")
-    .doc(id)
-    .get()
-    .then((doc) => {
-      if (doc.exists) {
-        const product = doc.data();
-        res.json(product);
-      } else {
-        res.status(404).json({ error: "Produk tidak ditemukan" });
-      }
-    })
-    .catch((error) => {
-      console.error("Terjadi kesalahan saat mengambil detail produk:", error);
-      res
-        .status(500)
-        .json({ error: "Terjadi kesalahan saat mengambil detail produk" });
     });
 });
 
@@ -306,6 +292,7 @@ app.get("/api/cart", (req, res) => {
               const quantity = parseInt(cartItem.quantity, 10); // Konversi ke tipe data number dengan radix 10
               const totalHarga = hargaRupiah * quantity;
               cartItem.totalHarga = totalHarga;
+              cartItem.url = productData.url; // Menambahkan properti "url" dari data produk
             }
           })
           .catch((error) => {
@@ -347,7 +334,34 @@ app.get("/api/cart", (req, res) => {
     });
 });
 
-// Kurangi jumlah, Menghapus produk dari keranjang
+// Menghapus semua produk dari keranjang
+app.delete("/api/cart", (req, res) => {
+  const userId = req.session.user.userDocId;
+
+  db.collection("cart")
+    .where("userId", "==", userId)
+    .get()
+    .then((snapshot) => {
+      const deletePromises = snapshot.docs.map((doc) => doc.ref.delete());
+      return Promise.all(deletePromises);
+    })
+    .then(() => {
+      res.json({ message: "Produk dalam keranjang berhasil dihapus" });
+    })
+    .catch((error) => {
+      console.error(
+        "Terjadi kesalahan saat menghapus produk dalam keranjang:",
+        error
+      );
+      res
+        .status(500)
+        .json({
+          error: "Terjadi kesalahan saat menghapus produk dalam keranjang",
+        });
+    });
+});
+
+// Menghapus produk dari keranjang
 app.delete("/api/cart/:productId", (req, res) => {
   const productId = req.params.productId;
   const userId = req.session.user.userDocId;
@@ -360,33 +374,116 @@ app.delete("/api/cart/:productId", (req, res) => {
       snapshot.forEach((doc) => {
         const quantity = doc.data().quantity;
         if (quantity > 1) {
-          doc.ref.update({ quantity: quantity - 1 })
+          doc.ref
+            .update({ quantity: quantity - 1 })
             .then(() => {
-              res.status(200).json({ message: "Quantity produk telah dikurangi" });
+              res
+                .status(200)
+                .json({ message: "Quantity produk telah dikurangi" });
             })
             .catch((error) => {
-              console.error("Terjadi kesalahan saat mengupdate quantity:", error);
-              res.status(500).json({ error: "Terjadi kesalahan saat mengupdate quantity" });
+              console.error(
+                "Terjadi kesalahan saat mengupdate quantity:",
+                error
+              );
+              res
+                .status(500)
+                .json({ error: "Terjadi kesalahan saat mengupdate quantity" });
             });
         } else {
-          doc.ref.delete()
+          doc.ref
+            .delete()
             .then(() => {
-              res.status(204).json({ message: "Produk telah terhapus dari keranjang" });
+              res
+                .status(204)
+                .json({ message: "Produk telah terhapus dari keranjang" });
             })
             .catch((error) => {
-              console.error("Terjadi kesalahan saat menghapus produk dari keranjang:", error);
-              res.status(500).json({ error: "Terjadi kesalahan saat menghapus produk dari keranjang" });
+              console.error(
+                "Terjadi kesalahan saat menghapus produk dari keranjang:",
+                error
+              );
+              res
+                .status(500)
+                .json({
+                  error:
+                    "Terjadi kesalahan saat menghapus produk dari keranjang",
+                });
             });
         }
       });
     })
     .catch((error) => {
-      console.error("Terjadi kesalahan saat menghapus produk dari keranjang:", error);
-      res.status(500).json({ error: "Terjadi kesalahan saat menghapus produk dari keranjang" });
+      console.error(
+        "Terjadi kesalahan saat menghapus produk dari keranjang:",
+        error
+      );
+      res
+        .status(500)
+        .json({
+          error: "Terjadi kesalahan saat menghapus produk dari keranjang",
+        });
     });
 });
 
-// daftar akun dan isi personalisasi
+// Menghitung total harga pembelian
+app.get("/api/cart/total", (req, res) => {
+  db.collection("cartItems")
+    .get()
+    .then((snapshot) => {
+      let total = 0;
+      snapshot.forEach((doc) => {
+        const cartItem = doc.data();
+        total += cartItem.price * cartItem.quantity;
+      });
+      res.json({ total });
+    })
+    .catch((error) => {
+      console.error(
+        "Terjadi kesalahan saat menghitung total harga pembelian:",
+        error
+      );
+      res.status(500).json({
+        error: "Terjadi kesalahan saat menghitung total harga pembelian",
+      });
+    });
+});
+
+// Menyelesaikan pembelian produk di keranjang
+app.post("/api/cart/checkout", (req, res) => {
+  db.collection("cartItems")
+    .get()
+    .then((snapshot) => {
+      if (snapshot.empty) {
+        const response = {
+          success: false,
+          message: "Tidak ada produk di keranjang",
+        };
+        return res.status(400).json(response);
+      }
+
+      // Proses pembayaran dan lainnya...
+      // Setelah pembelian berhasil, Anda dapat menghapus semua item dalam keranjang
+      const deletePromises = snapshot.docs.map((doc) => doc.ref.delete());
+      return Promise.all(deletePromises);
+    })
+    .then(() => {
+      const response = {
+        success: true,
+        message: "Pembelian Berhasil",
+      };
+      res.status(200).json(response);
+    })
+    .catch((error) => {
+      console.error("Terjadi kesalahan saat checkout:", error);
+      const response = {
+        success: false,
+        message: "Terjadi kesalahan saat checkout",
+      };
+      res.status(500).json(response);
+    });
+});
+
 app.post("/api/register", (req, res) => {
   const {
     username,
@@ -496,12 +593,115 @@ app.post("/api/login", (req, res) => {
     });
 });
 
-// Handler untuk logout pengguna
-app.post("/api/logout", (req, res) => {
-  // Hapus data login pengguna dari sesi
-  req.session.destroy();
+// Menambahkan review produk
+app.post("/api/products/:productId/reviews", checkLogin, (req, res) => {
+  const { productId } = req.params;
+  const { rating, comment } = req.body;
+  const userId = req.session.user.userDocId; // Ambil ID pengguna yang sedang login
 
-  res.json({ message: "Logout berhasil" });
+  // Lakukan validasi data
+  if (!rating || !comment) {
+    res.status(400).json({ error: "Rating dan komentar diperlukan" });
+    return;
+  }
+
+  // Buat objek review
+  const review = {
+    userId,
+    rating: parseInt(rating, 10),
+    comment,
+    createdAt: new Date(),
+  };
+
+  // Simpan review ke database
+  db.collection("reviews")
+    .add(review)
+    .then((docRef) => {
+      const reviewId = docRef.id;
+
+      // Update product's reviews property
+      db.collection("products")
+        .doc(productId)
+        .update({
+          reviews: admin.firestore.FieldValue.arrayUnion(reviewId),
+        })
+        .then(() => {
+          res.json({ reviewId });
+        })
+        .catch((error) => {
+          console.error(
+            "Terjadi kesalahan saat memperbarui reviews produk:",
+            error
+          );
+          res
+            .status(500)
+            .json({
+              error: "Terjadi kesalahan saat memperbarui reviews produk",
+            });
+        });
+    })
+    .catch((error) => {
+      console.error("Terjadi kesalahan saat menambahkan review:", error);
+      res
+        .status(500)
+        .json({ error: "Terjadi kesalahan saat menambahkan review" });
+    });
+});
+
+// Melihat Detail Produk
+app.get("/api/products/:id", (req, res) => {
+  const id = req.params.id;
+
+  db.collection("products")
+    .doc(id)
+    .get()
+    .then((productDoc) => {
+      if (productDoc.exists) {
+        const productData = productDoc.data();
+        const product = {
+          id: productDoc.id,
+          ...productData,
+        };
+
+        const reviewPromises = productData.reviews.map((reviewId) =>
+          db.collection("reviews").doc(reviewId).get()
+        );
+
+        Promise.all(reviewPromises)
+          .then((reviewDocs) => {
+            const reviews = reviewDocs.map((reviewDoc) => {
+              const reviewData = reviewDoc.data();
+              return {
+                id: reviewDoc.id,
+                ...reviewData,
+              };
+            });
+
+            product.reviews = reviews;
+
+            res.json(product);
+          })
+          .catch((error) => {
+            console.error(
+              "Terjadi kesalahan saat mengambil detail produk:",
+              error
+            );
+            res.status(500).json({
+              error: "Terjadi kesalahan saat mengambil detail produk",
+            });
+          });
+      } else {
+        res.status(404).json({
+          error: "Produk tidak ditemukan",
+        });
+      }
+    })
+    .catch((error) => {
+      console.error("Terjadi kesalahan saat mengambil detail produk:", error);
+      res.status(500).json({
+        error: "Terjadi kesalahan saat mengambil detail produk",
+      });
+    });
 });
 
 app.get("/", (req, res) => {
