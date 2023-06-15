@@ -1,0 +1,9 @@
+com.example.beansbay.test.app-core-1.5.0-0 C:\Users\Lenovo\.gradle\caches\transforms-3\5d77408af7efc12d7d9020ce6636feda\transformed\core-1.5.0\res
+com.example.beansbay.test.app-annotation-experimental-1.3.0-1 C:\Users\Lenovo\.gradle\caches\transforms-3\f464422527796923dc64c8818d7f71f7\transformed\annotation-experimental-1.3.0\res
+com.example.beansbay.test.app-androidTest-2 C:\isro\KOTLIN\BeansBay_done\app\build\generated\res\resValues\androidTest\debug
+com.example.beansbay.test.app-androidTest-3 C:\isro\KOTLIN\BeansBay_done\app\build\generated\res\rs\androidTest\debug
+com.example.beansbay.test.app-mergeDebugAndroidTestResources-4 C:\isro\KOTLIN\BeansBay_done\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.beansbay.test.app-mergeDebugAndroidTestResources-5 C:\isro\KOTLIN\BeansBay_done\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.beansbay.test.app-merged_res-6 C:\isro\KOTLIN\BeansBay_done\app\build\intermediates\merged_res\debugAndroidTest
+com.example.beansbay.test.app-androidTest-7 C:\isro\KOTLIN\BeansBay_done\app\src\androidTest\res
+com.example.beansbay.test.app-androidTestDebug-8 C:\isro\KOTLIN\BeansBay_done\app\src\androidTestDebug\res

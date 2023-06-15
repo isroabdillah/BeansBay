@@ -1,0 +1,410 @@
+[
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\layout_item_transaksi_history.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\layout\\item_transaksi_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_bgbeans.jpg.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\bgbeans.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-anydpi-v24_icon_cancel.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-anydpi-v24\\icon_cancel.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-v24_img_1.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable-v24\\img_1.png"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\font_poppins_semibold.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\font\\poppins_semibold.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_shape_kotak.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\shape_kotak.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_ic_baseline_favorite_border_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\ic_baseline_favorite_border_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\font_ppsemibold.ttf.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\font\\ppsemibold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_ic_baseline_star_half_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\ic_baseline_star_half_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-v24_ic_baseline_logout_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable-v24\\ic_baseline_logout_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-v24_img.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable-v24\\img.png"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\layout_item_checkout.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\layout\\item_checkout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-mdpi_icon_cancel.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-mdpi\\icon_cancel.png"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\layout_activity_signup.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\layout\\activity_signup.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_ic_baseline_lock_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\ic_baseline_lock_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-ldpi_icon_cancel.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-ldpi\\icon_cancel.png"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-xxhdpi_icon_minus.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-xxhdpi\\icon_minus.png"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-xhdpi_icon_minus.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-xhdpi\\icon_minus.png"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_ic_baseline_email_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\ic_baseline_email_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_search_bar.jpg.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\search_bar.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_shape_chekout.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\shape_chekout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_ic_baseline_star_border_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\ic_baseline_star_border_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_beans.jpg.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\beans.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-v24_ic_baseline_prefferences_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable-v24\\ic_baseline_prefferences_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_baseline_boy_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\baseline_boy_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\layout_item_review.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\layout\\item_review.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\font_poppins_light.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\font\\poppins_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-mdpi_icon_plus.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-mdpi\\icon_plus.png"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-xxhdpi_icon_cancel.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-xxhdpi\\icon_cancel.png"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_ic_baseline_storefront_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\ic_baseline_storefront_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\layout_item_checkout_result.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\layout\\item_checkout_result.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\layout_activity_signup2.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\layout\\activity_signup2.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-xhdpi_icon_cancel.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-xhdpi\\icon_cancel.png"
+    },
+    {
+        "merged": "com.example.beansbay.app-merged_res-43:/layout_item_product.xml.flat",
+        "source": "com.example.beansbay.app-main-45:/layout/item_product.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\layout_item_dropwdown.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\layout\\item_dropwdown.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_product_1.jpg.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\product_1.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\layout_activity_history.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\layout\\activity_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\font_ppmedium.ttf.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\font\\ppmedium.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-xhdpi_icon_plus.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-xhdpi\\icon_plus.png"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_kotak_search.jpg.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\kotak_search.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-ldpi_icon_plus.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-ldpi\\icon_plus.png"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-v24_ic_baseline_settings_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable-v24\\ic_baseline_settings_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\font_ppbold.ttf.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\font\\ppbold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-anydpi-v24_icon_plus.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-anydpi-v24\\icon_plus.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\layout_activity_welcome_screen.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\layout\\activity_welcome_screen.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_ic_baseline_person_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\ic_baseline_person_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\layout_activity_dark_mode.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\layout\\activity_dark_mode.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-v24_ic_baseline_help_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable-v24\\ic_baseline_help_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_ic_baseline_favorite_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\ic_baseline_favorite_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-xxxhdpi_icon_plus.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-xxxhdpi\\icon_plus.png"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_bgchekout.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\bgchekout.png"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_baseline_history_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\baseline_history_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\layout_activity_detail_product.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\layout\\activity_detail_product.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_ic_baseline_search_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\ic_baseline_search_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\layout_activity_checkout.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\layout\\activity_checkout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-xxxhdpi_icon_minus.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-xxxhdpi\\icon_minus.png"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-ldpi_icon_minus.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-ldpi\\icon_minus.png"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-v24_ic_baseline_navigate_next_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable-v24\\ic_baseline_navigate_next_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\layout_activity_settings.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\layout\\activity_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_ic_baseline_star_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\ic_baseline_star_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-xxhdpi_icon_plus.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-xxhdpi\\icon_plus.png"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-v24_ic_baseline_account_circle_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable-v24\\ic_baseline_account_circle_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_baseline_shopping_basket_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\baseline_shopping_basket_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\font_poppins_bold.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\font\\poppins_bold.xml"
+    },
+    {
+        "merged": "com.example.beansbay.app-merged_res-43:/layout_item_product_spotlight.xml.flat",
+        "source": "com.example.beansbay.app-main-45:/layout/item_product_spotlight.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-xxxhdpi_icon_cancel.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-xxxhdpi\\icon_cancel.png"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_baseline_home_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\baseline_home_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-anydpi-v24_icon_minus.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-anydpi-v24\\icon_minus.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-hdpi_icon_cancel.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-hdpi\\icon_cancel.png"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_shape.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\shape.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_baseline_coffee_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\baseline_coffee_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-hdpi_icon_minus.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-hdpi\\icon_minus.png"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_baseline_whatshot_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\baseline_whatshot_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\font_poppins_medium.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\font\\poppins_medium.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-mdpi_icon_minus.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-mdpi\\icon_minus.png"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-hdpi_icon_plus.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-hdpi\\icon_plus.png"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\layout_activity_search.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\layout\\activity_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\font_ppregular.ttf.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\font\\ppregular.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-pngs-38:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_shape_product.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\shape_product.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\layout_item_product_spotlight.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\layout\\item_product_spotlight.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_baseline_settings_24.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\baseline_settings_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\drawable_logobeand.png.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\drawable\\logobeand.png"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\layout_item_product.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\layout\\item_product.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\font_poppins_regular.xml.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\font\\poppins_regular.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-merged_res-43:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\7.4\\com.example.beansbay.app-main-45:\\mipmap-xxhdpi\\ic_launcher.webp"
+    }
+]
