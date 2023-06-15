@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">BeansBay_No_Font</string>
+    <string name="project_name">Beans Bay</string>
+    <string name="tagline">Where Beans Meet Its Bay!</string>
+    <string name="team_id">Product by C23-PS434</string>
+    <string name="greetings">Hello there! Hows your day?</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="today_s_n_recommendation">Today\'s \n Recommendation</string>
+    <string name="by_beansbay">by BeansBay</string>
+    <string name="nama_produk">Nama Produk</string>
+    <string name="toko_produk">Toko Produk</string>
+    <string name="harga_produk">Harga Produk</string>
+    <string name="nama_user">Nama User</string>
+    <string name="isi_review">Isi Review</string>
+    <string name="product_s_details">Product\'s Details</string>
+    <string name="deskripsi_produk">Deskripsi Produk</string>
+    <string name="customer_review">Customer Review</string>
+    <string name="_1_januari_2023">1 Januari 2023</string>
+    <string name="enable_dark_mode">Enable Dark Mode</string>
+    <string name="logout">Logout</string>
+    <string name="email_warning">Wrong email format</string>
+    <string name="password_warning">Password must have at least 8 characters</string>
+    <string name="name_warning">Name can\'t be empty</string>
+    <string name="register_success">Register success</string>
+    <string name="register_fail">Register failed</string>
+    <string name="login_success">Login success</string>
+    <string name="login_fail">Login failed</string>
+    <string name="_12000">12000</string>
+    <string name="proceed_to_checkout">Proceed to Checkout</string>
+</resources>
