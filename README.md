@@ -4,52 +4,60 @@ This repository contains the code for the "Jual Beli Kopi" application's backend
 
 ### API Endpoints
 
-#### 1.Welcome
-- Base URL: https://capstone-4cffc.et.r.appspot.com/
-- Metode: GET
-- Endpoint: /
-- Contoh Permintaan
-    curl -X GET https://capstone-4cffc.et.r.appspot.com/
-    curl -X GET -L https://capstone-4cffc.et.r.appspot.com/
-- Parameter : Tidak ada parameter yang diperlukan.
-- Respon
-    Selamat Datang di API Kegelapan
-  
-
-#### 2. Registrasi User
-- Base URL: https://capstone-4cffc.et.r.appspot.com/api/register
-- Metode: POST
-- Endpoint: /api/register
-- Tipe Konten: application/json
-- Body Permintaan :
-    {
-      "username": "kenangan",
-      "email": "kenangan@gmail.com",
-      "password": "kenangan",
-      "jenisKelamin": "Laki-laki",
-      "kategoriProduk": "Arabika",
-      "skorAroma": "6",
-      "aroma": "Sangat kuat",
-      "skorAsam": "8",
-      "asam": "Sedang"
-    }
-- Contoh Permintaan : 
-  curl -X POST -H "Content-Type: application/json" -d '{
-    "username": "kenangan",
-    "email": "kenangan@gmail.com",
-    "password": "kenangan",
-    "jenisKelamin": "Laki-laki",
-    "kategoriProduk": "Arabika",
-    "skorAroma": "6",
-    "aroma": "Sangat kuat",
-    "skorAsam": "8",
-    "asam": "Sedang"
-  }' https://capstone-4cffc.et.r.appspot.com/api/register
-- Respon
-  {
-    "message": "Pendaftaran berhasil"
-  }
-  
+1. Welcome
+Base URL: https://capstone-4cffc.et.r.appspot.com/
+Metode: GET
+Endpoint: /
+Contoh Permintaan:
+shell
+Copy code
+curl -X GET https://capstone-4cffc.et.r.appspot.com/
+shell
+Copy code
+curl -X GET -L https://capstone-4cffc.et.r.appspot.com/
+Parameter: Tidak ada parameter yang diperlukan.
+Respon:
+Copy code
+Selamat Datang di API Kegelapan
+2. Registrasi User
+Base URL: https://capstone-4cffc.et.r.appspot.com/api/register
+Metode: POST
+Endpoint: /api/register
+Tipe Konten: application/json
+Body Permintaan:
+json
+Copy code
+{
+  "username": "kenangan",
+  "email": "kenangan@gmail.com",
+  "password": "kenangan",
+  "jenisKelamin": "Laki-laki",
+  "kategoriProduk": "Arabika",
+  "skorAroma": "6",
+  "aroma": "Sangat kuat",
+  "skorAsam": "8",
+  "asam": "Sedang"
+}
+Contoh Permintaan:
+shell
+Copy code
+curl -X POST -H "Content-Type: application/json" -d '{
+  "username": "kenangan",
+  "email": "kenangan@gmail.com",
+  "password": "kenangan",
+  "jenisKelamin": "Laki-laki",
+  "kategoriProduk": "Arabika",
+  "skorAroma": "6",
+  "aroma": "Sangat kuat",
+  "skorAsam": "8",
+  "asam": "Sedang"
+}' https://capstone-4cffc.et.r.appspot.com/api/register
+Respon:
+json
+Copy code
+{
+  "message": "Pendaftaran berhasil"
+}
 
 #### 3. Get Product Details
 
