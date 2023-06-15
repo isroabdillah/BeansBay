@@ -1,4 +1,4 @@
-## "Jual Beli Kopi" Application API Documentation
+## "BeansBay" Application API Documentation
 
 This repository contains the code for the "Jual Beli Kopi" application's backend API. The API is developed using Node.js with the Express framework and is responsible for handling various functionalities related to product management, user interactions, and cart management. Below is a detailed documentation of the available API endpoints and their usage:
 
