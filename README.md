@@ -4,40 +4,51 @@ This repository contains the code for the "Jual Beli Kopi" application's backend
 
 ### API Endpoints
 
-#### 1. Search for Products
-
-- *Endpoint:* `GET /api/products/search`
-- *Description:* Search for products based on a provided name query parameter.
-- *Parameters:*
-  - `name` (required): The name of the product to search for.
-- *Example:*
-  javascript
-
-  app.get("/api/products/search", (req, res) => {
-    const { name } = req.query;
-
-    if (!name) {
-      res.status(400).json({ error: "Parameter name harus diberikan" });
-      return;
-    }
-
-    const filteredProducts = products.filter((product) =>
-      product.name.toLowerCase().includAes(name.toLowerCase())
-    );
-    res.json(filteredProducts);
-  });
+#### 1.Welcome
+- Base URL: https://capstone-4cffc.et.r.appspot.com/
+- Metode: GET
+- Endpoint: /
+- Contoh Permintaan
+    curl -X GET https://capstone-4cffc.et.r.appspot.com/
+    curl -X GET -L https://capstone-4cffc.et.r.appspot.com/
+- Parameter : Tidak ada parameter yang diperlukan.
+- Respon
+    Selamat Datang di API Kegelapan
   
 
-#### 2. Get All Products
-
-- *Endpoint:* `GET /api/products`
-- *Description:* Get the list of all available products.
-- *Example:*
-  javascript
-
-  app.get("/api/products", (req, res) => {
-    res.json(products);
-  });
+#### 2. Registrasi User
+- Base URL: https://capstone-4cffc.et.r.appspot.com/api/register
+- Metode: POST
+- Endpoint: /api/register
+- Tipe Konten: application/json
+- Body Permintaan :
+    {
+      "username": "kenangan",
+      "email": "kenangan@gmail.com",
+      "password": "kenangan",
+      "jenisKelamin": "Laki-laki",
+      "kategoriProduk": "Arabika",
+      "skorAroma": "6",
+      "aroma": "Sangat kuat",
+      "skorAsam": "8",
+      "asam": "Sedang"
+    }
+- Contoh Permintaan : 
+  curl -X POST -H "Content-Type: application/json" -d '{
+    "username": "kenangan",
+    "email": "kenangan@gmail.com",
+    "password": "kenangan",
+    "jenisKelamin": "Laki-laki",
+    "kategoriProduk": "Arabika",
+    "skorAroma": "6",
+    "aroma": "Sangat kuat",
+    "skorAsam": "8",
+    "asam": "Sedang"
+  }' https://capstone-4cffc.et.r.appspot.com/api/register
+- Respon
+  {
+    "message": "Pendaftaran berhasil"
+  }
   
 
 #### 3. Get Product Details
