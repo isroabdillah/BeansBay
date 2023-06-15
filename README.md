@@ -431,7 +431,7 @@ This repository contains the code for the "Jual Beli Kopi" application's backend
       ]
     }
     ```
-14. Produk Serupa
+14. Produk Serupa API dari Ml 
 - Metode: GET
 - Endpoint: `/api/similar`
 - Contoh Permintaan:
