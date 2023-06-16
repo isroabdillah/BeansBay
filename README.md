@@ -139,42 +139,95 @@ Please note that the dataset links provided are subject to change, and it's reco
 
 ### 
 
-<h3 align="left">Steps to Deploy Firestore to Cloud Functions</h3>
+<h3 align="left">Deploying API to Google Cloud</h3>
 
-**Step 1:** Create a Firebase Project
-- Open the Firebase console and create a new project.
-- Make sure the Firebase project is connected to your Google Cloud Platform (GCP) project. This enables you to leverage the resources and services provided by GCP.
+1. Create a Google Cloud Project:
+   - Go to the Google Cloud Console (console.cloud.google.com) and create a new project.
+   - Provide a unique name for your project and select the desired organization and billing account.
 
-**Step 2:** Access the Project Directory
-- Open the project directory of your Firebase project on your local machine. This directory contains the files and code for your Firebase project.
+2. Enable the Firestore API:
+   - In the Google Cloud Console, navigate to the API Library.
+   - Search for "Firestore API" and click on it.
+   - Click the "Enable" button to enable the Firestore API for your project.
 
-**Step 3:** Install Firebase CLI
-- Install the Firebase Command Line Interface (CLI) using npm, which is a package manager for Node.js.
-- Ensure that you have Node.js and npm installed on your machine.
-- To install the Firebase CLI, open your command-line interface and execute the following command: `npm install -g firebase-tools`.
-- This command will globally install the Firebase CLI, allowing you to use it from any directory on your machine.
+3. Create a Firestore Database:
+   - In the Google Cloud Console, go to the Firestore section.
+   - Click on "Create database" to create a new Firestore database.
+   - Select the location for your database and choose the security rules (e.g., locked mode or test mode) as per your requirements.
+   - Click on "Next" and then "Enable" to create the database.
 
-**Step 4:** Login to Firebase
-- Log in to Firebase using your Google Account by running the command: `firebase login`.
-- This command will open a browser window where you can authenticate with your Google Account.
-- Logging in establishes a connection between your local computer and Firebase, granting you access to your Firebase project.
+4. Generate Firestore Credentials:
+   - In the Google Cloud Console, go to the "IAM & Admin" section.
+   - Select "Service Accounts" and click on "Create Service Account".
+   - Provide a name for the service account and select the desired roles (e.g., Firestore Admin, Cloud Functions Developer).
+   - Click on "Create" to generate the service account.
+   - Once the service account is created, click on the "Create Key" button to generate a JSON key file.
+   - Download the JSON key file and keep it secure. This file will be used to authenticate your API requests.
 
-**Step 5:** Initialize the Firebase Project
-- After logging in, navigate to your app's directory in the command-line interface.
-- From there, initialize a new Firebase project by executing the command: `firebase init`.
-- The `firebase init` command will guide you through the process of configuring your project directory and setting up Firebase products.
-- During the initialization, you will be prompted to select the Firebase product you want to use (in this case, Firestore) and configure and deploy Firestore to Cloud Functions.
-- Make sure to choose the default Firebase project that you created earlier.
+5. Open Editor on Your Google Cloud Project:
+   - Access your Google Cloud project in the Google Cloud Console.
+   - Open the integrated code editor by clicking on the "Editor" tab.
 
-**Step 6:** Deploy Firestore to Cloud Functions
-- Once the project is initialized, you can deploy Firestore to Cloud Functions by running the following command from your project directory: `firebase deploy --only functions`.
-- This command will deploy your Firestore functions to the cloud, making them accessible and ready to be triggered by events.
+6. Clone the CC Branch from the Repository:
+   - In the code editor, open the terminal or command prompt.
+   - Clone the CC branch from the BeansBay repository by running the following command:
+     ```
+     git clone -b CC --single-branch https://github.com/isroabdillah/BeansBay.git
+     ```
+
+7. Go to the API folder:
+   - In the terminal, navigate to the BeansBay folder:
+     ```
+     cd BeansBay
+     cd API
+     ```
+
+8. Copy the previously generated credentials to the folder.
+
+9. Install all the dependencies:
+   - Run the following command to install all the required dependencies:
+     ```
+     npm install
+     ```
+
+10. Create a YAML file for App Engine configuration.
+
+11. Deploy the API:
+    - Deploy the API to Google Cloud App Engine by running the following command:
+      ```
+      gcloud app deploy
+      ```
+
+12. Obtain the deployed API link.
+
+13. Go to the API ML folder:
+    - In the terminal, navigate to the BeansBay folder:
+      ```
+      cd BeansBay
+      cd "API ML"
+      ```
+
+14. Install the required libraries:
+    - Run the following command to install the required libraries:
+      ```
+      pip install -r requirements.txt
+      ```
+
+15. Deploy the Machine Learning API:
+    - Deploy the Machine Learning API to Google Cloud App Engine by running the following command:
+      ```
+      gcloud app deploy
+      ```
+
+**Note: Make sure to replace the placeholders with the appropriate values and paths based on your specific project setup.
 
 <h3 align="left">Featured Technologies</h3>
 
 * [Firebase Firestore](https://firebase.google.com/products/firestore): Firestore is a versatile and scalable NoSQL document database provided by Firebase. It facilitates storing and synchronizing data for both client-side and server-side development.
-* [Google Cloud Functions](https://cloud.google.com/functions): Google Cloud Functions is a serverless computing platform provided by Firebase and Google Cloud Platform (GCP). It enables executing code in response to events, such as modifications to Firestore documents, without the need for managing server infrastructure.
+* [Firebase Cloud Functions](https://firebase.google.com/products/functions): Firebase Cloud Functions is a serverless computing platform provided by Firebase. It enables executing code in response to events, such as modifications to Firestore documents, without the need for managing server infrastructure.
 * [Firebase CLI](https://firebase.google.com/docs/cli): The Firebase Command Line Interface (CLI) is a robust tool for interacting with Firebase projects. It offers commands for project initialization, deployment, authentication, and more.
 * [Node.js](https://nodejs.org): Node.js is a runtime environment that enables server-side execution of JavaScript. It utilizes an event-driven, non-blocking I/O model, making it highly efficient for building scalable and real-time applications.
-* [Google Cloud Platform (GCP)](https://cloud.google.com): GCP provides a comprehensive suite of cloud services and infrastructure for application development, deployment, and management. It encompasses features such as data storage, machine learning, analytics, and more.
+* [Flask](https://flask.palletsprojects.com): Flask is a lightweight web framework for Python. It provides a simple and intuitive way to build web applications and APIs.
+
+
 
