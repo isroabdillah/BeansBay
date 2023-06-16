@@ -111,17 +111,29 @@
 
 <h2 align="left">Machine Learning</h2>
 
+###
+
+<h2 align="left">Machine Learning</h2>
+
 ### 
 
 <h3 align="left">Steps To Generate Model</h3>
 
-* <p align="left">Open Google Colaboratory or download from this link </p>
+* <p align="left">Open Google Colaboratory or download from this link:</p>
+    beansbay_coffee_recommender : https://colab.research.google.com/drive/165dqoY4sKOQTVDOuFs3ZgxLtn5yhy0uw?usp=sharing
+    beansbay_coffee_recommender_similar : https://colab.research.google.com/drive/15dvxj3yBM-rRniRkgsI2eGPQQHD1_uwr?usp=sharing
 * <p align="left">Preprocess and clean the datasets according to your code's requirement</p>
 * <p align="left">Customize the downloaded linked dataset links by integrating them in the Load The Data section of each code</p>
 * <p align="left">Build and train the machine learning models in section #Data Train or wherever the models do the training data</p>
 * <p align="left">Incorporate the trained models into your application to provide personalized recommendations and find similar products based on user preferences</p>
 
 Please note that the dataset links provided are subject to change, and it's recommended to download and store the datasets locally for smooth integration with your application.
+
+<h3 align="left">Dataset</h3>
+In BeansBay, two machine learning models are used, namely for system recommendations and for similar products. In both models, two different datasets are used, namely coffee_products and coffee_consumers. Both models use TensorFlow to make accurate recommendations. Meanwhile, the dataset used can be accessed at the following link.
+- produk_kopi : https://docs.google.com/spreadsheets/d/e/2PACX-1vR0m9FjHszfjZh1ei--UGZnUivJQSoU2-pRdGrWNHaXtqBWneZNbEdoZg_cOZ87gJTDjJMtGcGphED_/pubhtml?gid=165615979&single=true
+- konsumen_kopi : https://docs.google.com/spreadsheets/d/e/2PACX-1vR0m9FjHszfjZh1ei--UGZnUivJQSoU2-pRdGrWNHaXtqBWneZNbEdoZg_cOZ87gJTDjJMtGcGphED_/pubhtml?gid=2012083633&single=true
+Both of these datasets are secondary datasets.
 
 ###
 
