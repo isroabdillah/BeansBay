@@ -222,10 +222,12 @@ Please note that the dataset links provided are subject to change, and it's reco
 <h3 align="left">Featured Technologies</h3>
 
 * [Firebase Firestore](https://firebase.google.com/products/firestore): Firestore is a versatile and scalable NoSQL document database provided by Firebase. It facilitates storing and synchronizing data for both client-side and server-side development.
-* [Firebase Cloud Functions](https://firebase.google.com/products/functions): Firebase Cloud Functions is a serverless computing platform provided by Firebase. It enables executing code in response to events, such as modifications to Firestore documents, without the need for managing server infrastructure.
-* [Firebase CLI](https://firebase.google.com/docs/cli): The Firebase Command Line Interface (CLI) is a robust tool for interacting with Firebase projects. It offers commands for project initialization, deployment, authentication, and more.
 * [Node.js](https://nodejs.org): Node.js is a runtime environment that enables server-side execution of JavaScript. It utilizes an event-driven, non-blocking I/O model, making it highly efficient for building scalable and real-time applications.
 * [Flask](https://flask.palletsprojects.com): Flask is a lightweight web framework for Python. It provides a simple and intuitive way to build web applications and APIs.
+* [Google App Engine](https://cloud.google.com/appengine): Google App Engine is a fully managed serverless platform that allows you to build and deploy applications with ease. It abstracts away the underlying infrastructure, enabling you to focus on writing code rather than managing servers.
+* [Google Cloud Storage](https://cloud.google.com/storage): Google Cloud Storage is an object storage service provided by Google Cloud Platform. It offers highly scalable and durable storage for your data, allowing you to store and retrieve files and multimedia content with ease.
+
+
 
 
 
