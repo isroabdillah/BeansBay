@@ -129,3 +129,25 @@
 * [Keras](square.github.io): 
 
 ###
+
+<h2 align="left">Cloud Computing</h2>
+
+### 
+
+<h3 align="left">Steps to Deploy Firestore to Cloud Functions</h3>
+
+1. Begin by creating a Firebase project and establishing a connection with your Google Cloud Platform (GCP) project.
+2. Access the project directory on your local machine.
+3. Install the Firebase Command Line Interface (CLI) using npm. Ensure that you have Node.js and npm installed. To install the Firebase CLI, execute the following command: `npm install -g firebase-tools`.
+4. Log in to Firebase using your Google Account by running the command: `firebase login`. This command will establish a connection between your local computer and Firebase, granting access to your Firebase project.
+5. Initialize a new Firebase project by executing the command: `firebase init` from your app directory. The `firebase init` command will guide you through configuring your project directory and setting up Firebase products. During project initialization, the Firebase CLI will prompt you to complete the following tasks: select Firebase product (Firestore), and configure and deploy Firestore to Cloud Functions. Choose the default Firebase project.
+6. To deploy Firestore to Cloud Functions, run the following command from your project directory: `firebase deploy --only functions`.
+
+<h3 align="left">Featured Technologies</h3>
+
+* [Firebase Firestore](https://firebase.google.com/products/firestore): Firestore is a versatile and scalable NoSQL document database provided by Firebase. It facilitates storing and synchronizing data for both client-side and server-side development.
+* [Google Cloud Functions](https://cloud.google.com/functions): Google Cloud Functions is a serverless computing platform provided by Firebase and Google Cloud Platform (GCP). It enables executing code in response to events, such as modifications to Firestore documents, without the need for managing server infrastructure.
+* [Firebase CLI](https://firebase.google.com/docs/cli): The Firebase Command Line Interface (CLI) is a robust tool for interacting with Firebase projects. It offers commands for project initialization, deployment, authentication, and more.
+* [Node.js](https://nodejs.org): Node.js is a runtime environment that enables server-side execution of JavaScript. It utilizes an event-driven, non-blocking I/O model, making it highly efficient for building scalable and real-time applications.
+* [Google Cloud Platform (GCP)](https://cloud.google.com): GCP provides a comprehensive suite of cloud services and infrastructure for application development, deployment, and management. It encompasses features such as data storage, machine learning, analytics, and more.
+
