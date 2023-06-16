@@ -19,3 +19,6 @@ To use the machine learning models and implement the recommendation system and s
 - Incorporate the trained models into your application to provide personalized recommendations and find similar products based on user preferences.
 
 Please note that the dataset links provided are subject to change, and it's recommended to download and store the datasets locally for smooth integration with your application.
+
+## H5 Files
+If, you want to deploy the Machine Learning model that has been done. You can use h5 files.
