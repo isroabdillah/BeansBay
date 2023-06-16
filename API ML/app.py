@@ -11,11 +11,13 @@ import numpy as np
 app = Flask(__name__)
 CORS(app)
 model = keras.models.load_model('beansbay_coffee_recommender.h5')
-
+model1 = keras.models.load_model('beansbay_coffe_recommender_similar.h5')
 # Load Firestore credentials
-cred = credentials.Certificate('./capstone-4cffc-firebase-adminsdk-1uyq4-394dd3d1bb.json')
+cred = credentials.Certificate(
+    './capstone-4cffc-firebase-adminsdk-1uyq4-394dd3d1bb.json')
 firebase_admin.initialize_app(cred)
 db = firestore.client()
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -58,10 +60,18 @@ def predict():
                 data['skorAsam']
             ]
         ])
+        input_data1 = np.array([
+            [
+                data['kategoriProduk'],
+                data['skorAroma'],
+                data['skorAsam']
+            ]
+        ])
         predictions = model.predict([input_data])
-
+        predictions1 = model1.predict([input_data1])
         # Ambil nilai idProduk dengan nilai tertinggi
         top_indices = np.argsort(predictions, axis=1)[0][-5:][::-1]
+        top_indices1 = np.argsort(predictions1, axis=1)[0][-5:][::-1]
         id_produk_mapping = {
             0: 'P001',
             1: 'P002',
@@ -117,9 +127,15 @@ def predict():
             51: 'P052'
             # Mapping lainnya
         }
-        predicted_id_produks = [id_produk_mapping[index] for index in top_indices]
-        confidences = [float(predictions[0][index]) for index in top_indices]
+        predicted_id_produks = [id_produk_mapping[index]
+                                for index in top_indices]
+        # Predicted idProduks using model1
+        predicted_id_produks1 = [id_produk_mapping[index]
+                                 for index in top_indices1]
 
+        confidences = [float(predictions[0][index]) for index in top_indices]
+        confidences1 = [float(predictions1[0][index])
+                        for index in top_indices1]  # Confidences using model1
         # Ubah hasil prediksi menjadi format yang sesuai untuk respons JSON
         results = []
         for i in range(len(predicted_id_produks)):
@@ -129,13 +145,22 @@ def predict():
             }
             results.append(result)
 
-        response = jsonify({'results': results})
+        results1 = []
+        for i in range(len(predicted_id_produks1)):
+            confidence = confidences1[i]
+            result = {
+                'predicted_idProduk': predicted_id_produks1[i]
+            }
+            results1.append(result)
+
+        response = jsonify({'results': results, 'results1': results1})
 
         return response
 
     except Exception as e:
         print('Error:', e)
         return jsonify({'error': 'Internal server error'}), 500
+
 
 if __name__ == '__main__':
     app.run(debug=True)
