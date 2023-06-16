@@ -109,6 +109,5 @@
 
 * [Kotlin](kotlinlang.org): Why Kotlin. Modern, concise and safe programming language. Concise; Safe; Interoperable.
 * [Retrofit](square.github.io): Retrofit is the class through which your API interfaces are turned into callable objects
-* [Camera 2](https://developer.android.com/training/camera2): Camera2 is the latest Android camera framework API that replaces the deprecated camera framework libraries.
 
 ###
