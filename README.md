@@ -219,8 +219,6 @@ Please note that the dataset links provided are subject to change, and it's reco
       gcloud app deploy
       ```
 
-**Note: Make sure to replace the placeholders with the appropriate values and paths based on your specific project setup.
-
 <h3 align="left">Featured Technologies</h3>
 
 * [Firebase Firestore](https://firebase.google.com/products/firestore): Firestore is a versatile and scalable NoSQL document database provided by Firebase. It facilitates storing and synchronizing data for both client-side and server-side development.
