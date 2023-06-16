@@ -7,12 +7,10 @@ import keras as keras
 from flask_cors import CORS
 import numpy as np
 
-# Inisialisasi aplikasi Flask
 app = Flask(__name__)
 CORS(app)
 model = keras.models.load_model('beansbay_coffee_recommender.h5')
 model1 = keras.models.load_model('beansbay_coffe_recommender_similar.h5')
-# Load Firestore credentials
 cred = credentials.Certificate(
     './capstone-4cffc-firebase-adminsdk-1uyq4-394dd3d1bb.json')
 firebase_admin.initialize_app(cred)
@@ -22,19 +20,15 @@ db = firestore.client()
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
-        # Mendapatkan email pengguna dari cookie
         userDocId = request.cookies.get('user')
 
-        # Mendapatkan referensi dokumen pengguna dari Firestore
         user_ref = db.collection('users').document(userDocId)
         user_data = user_ref.get().to_dict()
         print(user_data)
 
-        # Mendapatkan skor asam dan aroma dari data pengguna
         skor_asam = int(user_data['skorAsam'])
         skor_aroma = int(user_data['skorAroma'])
 
-        # Persiapkan data input
         data = {
             'jenisKelamin': user_data['jenisKelamin'],
             'kategoriProduk': user_data['kategoriProduk'],
@@ -42,16 +36,13 @@ def predict():
             'skorAsam': skor_asam
         }
 
-        # Mengubah 'jenisKelamin' menjadi angka
         jenis_kelamin_mapping = {'Laki-laki': 0, 'Perempuan': 1}
         data['jenisKelamin'] = jenis_kelamin_mapping[data['jenisKelamin']]
 
-        # Mengubah 'kategoriProduk' menjadi angka
         kategori_produk_mapping = {'Arabika': 0, 'Campuran': 1, 'Catuai': 2,
                                    'Excelsa': 3, 'Liberika': 4, 'Luwak': 5, 'Robusta': 6, 'Single Origin': 7}
         data['kategoriProduk'] = kategori_produk_mapping[data['kategoriProduk']]
 
-        # Lakukan prediksi dengan data yang telah diubah
         input_data = np.array([
             [
                 data['jenisKelamin'],
@@ -69,7 +60,6 @@ def predict():
         ])
         predictions = model.predict([input_data])
         predictions1 = model1.predict([input_data1])
-        # Ambil nilai idProduk dengan nilai tertinggi
         top_indices = np.argsort(predictions, axis=1)[0][-5:][::-1]
         top_indices1 = np.argsort(predictions1, axis=1)[0][-5:][::-1]
         id_produk_mapping = {
@@ -125,18 +115,15 @@ def predict():
             49: 'P050',
             50: 'P051',
             51: 'P052'
-            # Mapping lainnya
         }
         predicted_id_produks = [id_produk_mapping[index]
                                 for index in top_indices]
-        # Predicted idProduks using model1
         predicted_id_produks1 = [id_produk_mapping[index]
                                  for index in top_indices1]
 
         confidences = [float(predictions[0][index]) for index in top_indices]
         confidences1 = [float(predictions1[0][index])
-                        for index in top_indices1]  # Confidences using model1
-        # Ubah hasil prediksi menjadi format yang sesuai untuk respons JSON
+                        for index in top_indices1] 
         results = []
         for i in range(len(predicted_id_produks)):
             confidence = confidences[i]

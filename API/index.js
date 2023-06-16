@@ -21,31 +21,28 @@ admin.initializeApp({
 });
 require("dotenv").config();
 
-// Mengakses kunci rahasia
 const secretKey = process.env.SECRET_KEY;
 const REFRESH_TOKEN_SECRET = process.env.REFRESH_TOKEN_SECRET;
 const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET;
 const db = admin.firestore();
 
-// Middleware untuk mengizinkan CORS
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
   next();
 });
-// Middleware untuk menginisialisasi sesi
+
 app.use(
   session({
-    secret: "rahasia", // Ganti dengan secret key yang lebih aman
+    secret: "rahasia",
     resave: false,
     saveUninitialized: true,
   })
 );
 
-// Middleware untuk memeriksa token
 function checkToken(req, res, next) {
-  const token = req.cookies.token; // Mengambil token dari cookies
+  const token = req.cookies.token;
 
   if (!token) {
     return res.status(401).json({ error: "Token otentikasi diperlukan" });
@@ -60,17 +57,14 @@ function checkToken(req, res, next) {
   });
 }
 
-// Menggunakan middleware checkToken pada rute yang memerlukan otentikas
-
 app.use(express.json());
 let users = [];
-// Fungsi untuk menghasilkan refresh token
+
 function generateRefreshToken(userId) {
   const refreshToken = jwt.sign({ userId }, process.env.REFRESH_TOKEN_SECRET);
   return refreshToken;
 }
 
-// Fungsi untuk memverifikasi refresh token
 function verifyRefreshToken(refreshToken) {
   try {
     const decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
@@ -80,7 +74,6 @@ function verifyRefreshToken(refreshToken) {
   }
 }
 
-// Fungsi untuk menghasilkan access token
 function generateAccessToken(userId) {
   const accessToken = jwt.sign({ userId }, process.env.ACCESS_TOKEN_SECRET, {
     expiresIn: "120m",
@@ -88,7 +81,6 @@ function generateAccessToken(userId) {
   return accessToken;
 }
 
-// Fungsi untuk memverifikasi access token
 function verifyAccessToken(accessToken) {
   try {
     const decoded = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET);
@@ -98,19 +90,16 @@ function verifyAccessToken(accessToken) {
   }
 }
 
-// Middleware untuk mengatur sesi
 app.use(
   session({
-    secret: "rahasia", // Ganti dengan kunci rahasia yang lebih kuat
+    secret: "rahasia",
     resave: true,
     saveUninitialized: true,
   })
 );
 
-// Middleware untuk memeriksa status login pengguna
 function checkLogin(req, res, next) {
   if (req.session.user && req.session.user.loggedIn) {
-    // Lanjutkan ke handler berikutnya jika pengguna sudah login
     next();
   } else {
     res.status(401).json({ message: "Silakan login terlebih dahulu" });
@@ -122,10 +111,7 @@ const generateRandomInvoice = () => {
   return `INV-${randomInvoice}`;
 };
 
-// Endpoint yang memerlukan autentikasi
 app.get("/api/user", checkToken, (req, res) => {
-  // Pengguna berhasil melewati autentikasi, lakukan operasi yang diperlukan
-  // contoh: mengambil data pengguna dari database
   const userId = req.user.userId;
 
   db.collection("users")
@@ -147,17 +133,13 @@ app.get("/api/user", checkToken, (req, res) => {
     });
 });
 
-// Endpoint untuk refresh token
 app.post("/api/refresh-token", (req, res) => {
   const refreshToken = req.body.refreshToken;
 
-  // Verifikasi refresh token
   jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
     if (err) {
       return res.status(403).json({ error: "Refresh token tidak valid" });
     }
-
-    // Buat token JWT baru
     const userId = decoded.userId;
     const newToken = jwt.sign({ userId }, process.env.ACCESS_TOKEN_SECRET, {
       expiresIn: process.env.ACCESS_TOKEN_EXPIRY,
@@ -167,24 +149,19 @@ app.post("/api/refresh-token", (req, res) => {
   });
 });
 
-// Handler untuk memeriksa status login pengguna
 app.get("/api/check-login", checkLogin, (req, res) => {
   res.json({ loggedIn: true, message: "Pengguna sudah login" });
 });
 
-// Handler untuk logout pengguna
 app.post("/api/logout", (req, res) => {
-  // Hapus data login pengguna dari sesi
   req.session.destroy();
 
-  // Hapus cookie dengan nama "token" dan "user"
   res.clearCookie("token");
   res.clearCookie("user");
 
   res.json({ message: "Logout berhasil" });
 });
 
-// Pencarian produk berdasarkan nama
 app.get("/api/products/search", (req, res) => {
   const { name } = req.query;
 
@@ -200,7 +177,7 @@ app.get("/api/products/search", (req, res) => {
       snapshot.forEach((doc) => {
         const product = doc.data();
         if (product.namaProduk.toLowerCase().includes(name.toLowerCase())) {
-          product.id = doc.id; // Menambahkan properti "id" dari dokumen
+          product.id = doc.id;
           products.push(product);
         }
       });
@@ -212,7 +189,6 @@ app.get("/api/products/search", (req, res) => {
     });
 });
 
-// Mendapatkan daftar produk
 app.get("/api/products", (req, res) => {
   db.collection("products")
     .get()
@@ -220,7 +196,7 @@ app.get("/api/products", (req, res) => {
       const products = [];
       snapshot.forEach((doc) => {
         const product = doc.data();
-        product.id = doc.id; // Menambahkan properti "id" dari dokumen
+        product.id = doc.id;
         products.push(product);
       });
       res.json(products);
@@ -233,11 +209,10 @@ app.get("/api/products", (req, res) => {
     });
 });
 
-// Menambahkan produk ke keranjang
 let counter = 0;
 app.post("/api/cart", checkToken, checkLogin, (req, res) => {
   const { productId, quantity } = req.body;
-  const userId = req.cookies.user.userDocId; // Mendapatkan userID dari sesi
+  const userId = req.cookies.user.userDocId;
 
   if (!userId) {
     return res.status(401).json({ error: "Unauthorized" });
@@ -248,7 +223,7 @@ app.post("/api/cart", checkToken, checkLogin, (req, res) => {
 
   const cartData = {
     productId,
-    quantity: parseInt(quantity, 10), // Mengubah quantity menjadi tipe data number
+    quantity: parseInt(quantity, 10),
     userId,
   };
 
@@ -258,14 +233,12 @@ app.post("/api/cart", checkToken, checkLogin, (req, res) => {
     .get()
     .then((snapshot) => {
       if (snapshot.empty) {
-        // Jika dokumen belum ada, buat dokumen baru
         return db.collection("cart").doc(cartId).set(cartData);
       } else {
-        // Jika dokumen sudah ada, update quantity
         const existingCartData = snapshot.docs[0].data();
         const existingCartId = snapshot.docs[0].id;
         const existingQuantity = existingCartData.quantity || 0;
-        const newQuantity = existingQuantity + parseInt(quantity, 10); // Menambahkan quantity yang baru
+        const newQuantity = existingQuantity + parseInt(quantity, 10);
 
         return db.collection("cart").doc(existingCartId).update({
           quantity: newQuantity,
@@ -288,7 +261,6 @@ app.post("/api/cart", checkToken, checkLogin, (req, res) => {
     });
 });
 
-// Mendapatkan daftar produk dalam keranjang
 app.get("/api/cart", checkToken, checkLogin, (req, res) => {
   const userId = req.cookies.user.userDocId;
   db.collection("cart")
@@ -296,7 +268,6 @@ app.get("/api/cart", checkToken, checkLogin, (req, res) => {
     .get()
     .then((snapshot) => {
       if (snapshot.empty) {
-        // Tidak ada dokumen yang cocok dengan kueri
         res.json({ cartItems: [], hargaKeranjang: 0 });
         return;
       }
@@ -362,7 +333,6 @@ app.get("/api/cart", checkToken, checkLogin, (req, res) => {
     });
 });
 
-// Menghapus semua produk dari keranjang
 app.delete("/api/cart", checkToken, checkLogin, (req, res) => {
   const userId = req.session.user.userDocId;
 
@@ -387,14 +357,13 @@ app.delete("/api/cart", checkToken, checkLogin, (req, res) => {
     });
 });
 
-// Menghapus produk dari keranjang
 app.delete("/api/cart/:productId", checkToken, checkLogin, (req, res) => {
   const productId = req.params.productId;
   const userId = req.session.user.userDocId;
 
   db.collection("cart")
     .where("productId", "==", productId)
-    .where("userId", "==", userId) // Ganti dengan ID pengguna yang sedang login
+    .where("userId", "==", userId)
     .get()
     .then((snapshot) => {
       snapshot.forEach((doc) => {
@@ -459,7 +428,6 @@ app.post("/api/cart/checkout", checkToken, checkLogin, (req, res) => {
     .get()
     .then((snapshot) => {
       if (snapshot.empty) {
-        // Tidak ada produk dalam keranjang
         res.status(400).json({ error: "Keranjang kosong" });
         return;
       }
@@ -508,8 +476,6 @@ app.post("/api/cart/checkout", checkToken, checkLogin, (req, res) => {
           // Nama dokumen transaksi
           let transactionDocName = `transaksi_${userId}`;
           let counter = 1;
-
-          // Cek apakah dokumen transaksi dengan nama yang sama sudah ada
           const checkTransaction = () => {
             return db
               .collection("transaksi")
@@ -517,19 +483,15 @@ app.post("/api/cart/checkout", checkToken, checkLogin, (req, res) => {
               .get()
               .then((doc) => {
                 if (doc.exists) {
-                  // Dokumen transaksi dengan nama yang sama sudah ada
-                  // Tambahkan angka sebagai sufiks dan cek kembali
                   counter++;
                   transactionDocName = `transaksi_${userId}_${counter}`;
-                  return checkTransaction(); // Lakukan pengecekan ulang
+                  return checkTransaction();
                 } else {
-                  // Dokumen transaksi dengan nama yang unik
-                  // Simpan data transaksi ke Firestore
                   const transactionData = {
-                    userId: userId, // Tambahkan userId ke data transaksi
+                    userId: userId,
                     cartItems,
                     hargaKeranjang: hargaKeranjang,
-                    tanggalWaktuCheckout: waktuJakarta, // Menggunakan waktu Jakarta
+                    tanggalWaktuCheckout: waktuJakarta,
                     invoice,
                   };
 
@@ -542,12 +504,11 @@ app.post("/api/cart/checkout", checkToken, checkLogin, (req, res) => {
                         message: "Checkout berhasil",
                         cartItems,
                         hargaKeranjang: hargaKeranjang,
-                        tanggalWaktuCheckout: waktuJakarta, // Menggunakan waktu Jakarta
+                        tanggalWaktuCheckout: waktuJakarta,
                         invoice,
                       });
                     })
                     .then(() => {
-                      // Hapus semua produk dalam keranjang setelah checkout
                       const deletePromises = snapshot.docs.map((doc) =>
                         doc.ref.delete()
                       );
@@ -556,8 +517,6 @@ app.post("/api/cart/checkout", checkToken, checkLogin, (req, res) => {
                 }
               });
           };
-
-          // Panggil fungsi untuk memeriksa dan menyimpan data transaksi
           return checkTransaction();
         })
         .catch((error) => {
@@ -578,7 +537,6 @@ app.post("/api/cart/checkout", checkToken, checkLogin, (req, res) => {
     });
 });
 
-// Transaksi terbaru user
 app.get("/api/transaksi/terbaru", checkToken, checkLogin, (req, res) => {
   const userId = req.cookies.user.userDocId;
 
@@ -606,7 +564,6 @@ app.get("/api/transaksi/terbaru", checkToken, checkLogin, (req, res) => {
     });
 });
 
-//history
 app.get("/api/transaksi", checkToken, checkLogin, (req, res) => {
   const userId = req.cookies.user.userDocId;
 
@@ -635,7 +592,6 @@ app.get("/api/transaksi", checkToken, checkLogin, (req, res) => {
     });
 });
 
-// Menghitung total harga pembelian
 app.get("/api/cart/total", checkToken, checkLogin, (req, res) => {
   db.collection("cartItems")
     .get()
@@ -658,8 +614,6 @@ app.get("/api/cart/total", checkToken, checkLogin, (req, res) => {
     });
 });
 
-// Menyelesaikan pembelian produk di keranjang
-
 app.post("/api/register", (req, res) => {
   const {
     username,
@@ -673,11 +627,9 @@ app.post("/api/register", (req, res) => {
     asam,
   } = req.body;
 
-  // Mengubah skor aroma dan asam menjadi number
   const parsedSkorAroma = parseInt(skorAroma);
   const parsedSkorAsam = parseInt(skorAsam);
 
-  // Periksa keberadaan email dalam database
   db.collection("users")
     .where("email", "==", email)
     .get()
@@ -686,7 +638,6 @@ app.post("/api/register", (req, res) => {
         return res.status(400).json({ error: "Email sudah terdaftar" });
       }
 
-      // Enkripsi kata sandi menggunakan bcrypt
       bcrypt.hash(password, 10, (err, hashedPassword) => {
         if (err) {
           return res
@@ -706,7 +657,6 @@ app.post("/api/register", (req, res) => {
           asam,
         };
 
-        // Tambahkan data pengguna ke Firestore
         db.collection("users")
           .doc(email)
           .set(data)
@@ -734,7 +684,6 @@ app.post("/api/register", (req, res) => {
 app.post("/api/login", (req, res) => {
   const { email, password } = req.body;
 
-  // Cari pengguna dengan email yang sesuai
   admin
     .firestore()
     .collection("users")
@@ -747,16 +696,12 @@ app.post("/api/login", (req, res) => {
 
       const user = snapshot.docs[0].data();
 
-      // Periksa kecocokan kata sandi menggunakan bcrypt
       bcrypt.compare(password, user.password, (err, result) => {
         if (err || !result) {
           return res.status(401).json({ error: "Email atau kata sandi salah" });
         }
-
-        // Buat token otentikasi menggunakan JSON Web Token (JWT)
         const token = jwt.sign({ userId: user.id }, process.env.SECRET_KEY);
 
-        // Simpan data login pengguna dalam sesi
         req.session.user = {
           loggedIn: true,
           userId: user.id,
@@ -764,11 +709,9 @@ app.post("/api/login", (req, res) => {
           token: token,
         };
 
-        // Simpan token dalam cookie
         res.cookie("token", token, { httpOnly: true });
         res.cookie("user", req.session.user);
         res.setHeader("Authorization", `Bearer ${token}`);
-        // Kirim permintaan ke API Flask dengan menyertakan cookie dalam header
         axios
           .post(
             "https://ml-dot-capstone-4cffc.et.r.appspot.com/predict",
@@ -781,10 +724,7 @@ app.post("/api/login", (req, res) => {
             }
           )
           .then((response) => {
-            // Tangani respons dari API Flask
-            const data = response.data; // Data respons yang ingin Anda simpan
-
-            // Simpan data respons dalam dokumen pengguna yang bersangkutan
+            const data = response.data;
             admin
               .firestore()
               .collection("user_responses")
@@ -794,7 +734,6 @@ app.post("/api/login", (req, res) => {
                 console.log(
                   "Data respons berhasil disimpan untuk pengguna dengan ID:"
                 );
-                // Lanjutkan dengan respons ke klien atau lakukan tindakan lainnya
                 res.json({ message: "Login berhasil", token });
               })
               .catch((error) => {
@@ -824,12 +763,10 @@ app.post("/api/login", (req, res) => {
     });
 });
 
-// Recomendation Home
 app.get("/api/recomendation", (req, res) => {
   const userId = req.cookies.user.userDocId;
   console.log(userId);
 
-  // Mengambil data dari koleksi "user_responses" dengan nama dokumen yang sesuai dengan ID pengguna
   admin
     .firestore()
     .collection("user_responses")
@@ -849,7 +786,6 @@ app.get("/api/recomendation", (req, res) => {
         a.predicted_idProduk.localeCompare(b.predicted_idProduk)
       );
 
-      // Mengambil data produk dari koleksi "products" dengan ID dokumen yang sesuai dengan nilai predicted_idProduk
       admin
         .firestore()
         .collection("products")
@@ -861,19 +797,17 @@ app.get("/api/recomendation", (req, res) => {
           querySnapshot.forEach((productDoc) => {
             if (productDoc.exists) {
               const productData = productDoc.data();
-              const id = productDoc.id; // Mendapatkan ID dokumen
+              const id = productDoc.id;
               const productWithId = { id, ...productData };
               products.push(productWithId);
             }
           });
 
-          // Menggabungkan data pengguna dan detail produk menjadi satu objek respons
           const responseData = {
             results: results,
             products: products,
           };
 
-          // Kirim data sebagai respons
           res.json(responseData);
         })
         .catch((error) => {
@@ -895,7 +829,6 @@ app.get("/api/similar", (req, res) => {
   const userId = req.cookies.user.userDocId;
   console.log(userId);
 
-  // Mengambil data dari koleksi "user_responses" dengan nama dokumen yang sesuai dengan ID pengguna
   admin
     .firestore()
     .collection("user_responses")
@@ -916,7 +849,6 @@ app.get("/api/similar", (req, res) => {
         a.predicted_idProduk.localeCompare(b.predicted_idProduk)
       );
 
-      // Mengambil data produk dari koleksi "products" dengan ID dokumen yang sesuai dengan nilai predicted_idProduk
       admin
         .firestore()
         .collection("products")
@@ -927,19 +859,17 @@ app.get("/api/similar", (req, res) => {
           querySnapshot.forEach((productDoc) => {
             if (productDoc.exists) {
               const productData = productDoc.data();
-              const id = productDoc.id; // Mendapatkan ID dokumen
+              const id = productDoc.id;
               const productWithId = { id, ...productData };
               products.push(productWithId);
             }
           });
 
-          // Menggabungkan data pengguna dan detail produk menjadi satu objek respons
           const responseData = {
             similar: results1,
             products: products,
           };
 
-          // Kirim data sebagai respons
           res.json(responseData);
         })
         .catch((error) => {
@@ -957,7 +887,6 @@ app.get("/api/similar", (req, res) => {
     });
 });
 
-// Menambahkan review produk
 app.post(
   "/api/products/:productId/reviews",
   checkLogin,
@@ -965,15 +894,13 @@ app.post(
   (req, res) => {
     const { productId } = req.params;
     const { rating, comment } = req.body;
-    const userId = req.session.user.userDocId; // Ambil ID pengguna yang sedang login
+    const userId = req.session.user.userDocId;
 
-    // Lakukan validasi data
     if (!rating || !comment) {
       res.status(400).json({ error: "Rating dan komentar diperlukan" });
       return;
     }
 
-    // Buat objek review
     const review = {
       userId,
       rating: parseInt(rating, 10),
@@ -981,13 +908,11 @@ app.post(
       createdAt: new Date(),
     };
 
-    // Simpan review ke database
     db.collection("reviews")
       .add(review)
       .then((docRef) => {
         const reviewId = docRef.id;
 
-        // Update product's reviews property
         db.collection("products")
           .doc(productId)
           .update({
@@ -1015,7 +940,6 @@ app.post(
   }
 );
 
-// Melihat Detail Produk
 app.get("/api/products/:id", checkToken, (req, res) => {
   const id = req.params.id;
 
