@@ -131,8 +131,10 @@ Please note that the dataset links provided are subject to change, and it's reco
 
 <h3 align="left">Dataset</h3>
 In BeansBay, two machine learning models are used, namely for system recommendations and for similar products. In both models, two different datasets are used, namely coffee_products and coffee_consumers. Both models use TensorFlow to make accurate recommendations. Meanwhile, the dataset used can be accessed at the following link.
+
 - produk_kopi : https://docs.google.com/spreadsheets/d/e/2PACX-1vR0m9FjHszfjZh1ei--UGZnUivJQSoU2-pRdGrWNHaXtqBWneZNbEdoZg_cOZ87gJTDjJMtGcGphED_/pubhtml?gid=165615979&single=true
 - konsumen_kopi : https://docs.google.com/spreadsheets/d/e/2PACX-1vR0m9FjHszfjZh1ei--UGZnUivJQSoU2-pRdGrWNHaXtqBWneZNbEdoZg_cOZ87gJTDjJMtGcGphED_/pubhtml?gid=2012083633&single=true
+
 Both of these datasets are secondary datasets.
 
 ###
