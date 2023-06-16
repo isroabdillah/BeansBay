@@ -40,7 +40,7 @@
 
 ###
 
-<h2 align="left">UX DESIGN</h2>
+<h2 align="left">Mobile Development</h2>
 
 ###
 
@@ -93,10 +93,6 @@
 </div>
 
 ###
-
-<h2 align="left">Android</h2>
-
-### 
 
 <h3 align="left">Steps To Clone Project</h3>
 
