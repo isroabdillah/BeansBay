@@ -226,6 +226,15 @@ Please note that the dataset links provided are subject to change, and it's reco
 * [Flask](https://flask.palletsprojects.com): Flask is a lightweight web framework for Python. It provides a simple and intuitive way to build web applications and APIs.
 * [Google App Engine](https://cloud.google.com/appengine): Google App Engine is a fully managed serverless platform that allows you to build and deploy applications with ease. It abstracts away the underlying infrastructure, enabling you to focus on writing code rather than managing servers.
 * [Google Cloud Storage](https://cloud.google.com/storage): Google Cloud Storage is an object storage service provided by Google Cloud Platform. It offers highly scalable and durable storage for your data, allowing you to store and retrieve files and multimedia content with ease.
+- `bcrypt`: This package provides password hashing functionality, allowing you to securely store and compare passwords.
+- `body-parser`: This middleware parses incoming request bodies in a format such as JSON, making it easier to handle data sent from client-side forms.
+- `dotenv`: This module loads environment variables from a `.env` file into `process.env`, making it convenient for storing sensitive information.
+- `express`: This is a fast and minimalist web framework for Node.js. It simplifies the process of building robust web applications and APIs.
+- `express-session`: This middleware enables session management in Express, allowing you to store user session data and maintain stateful behavior.
+- `express-validator`: This package provides a set of express.js middleware functions for validating request data and ensuring its integrity.
+- `firebase`: This package provides the JavaScript SDK for Firebase, allowing you to interact with Firebase services in your Node.js application.
+- `firebase-admin`: This package provides the Firebase Admin SDK, which allows you to access and manage Firebase services from privileged environments.
+- `jsonwebtoken`: This package enables you to generate and verify JSON Web Tokens (JWTs) for user authentication and authorization.
 
 
 
