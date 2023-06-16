@@ -1,4 +1,4 @@
-<h1 align="left">Android Aplication</h1>
+<h2 align="left">Mobile Development</h2>
 
 ###
 
@@ -52,14 +52,11 @@
 
 ###
 
-<h2 align="left">Android</h2>
-
-### 
-
 <h3 align="left">Steps To Clone Project</h3>
 
 <p align="left">1. Pull the project from android  or download from this link https://github.com/isroabdillah/BeansBay.git</p>
 <p align="left">2. Open In Android studio</p>
+<p align="left">Or you can directly install the application here (https://bit.ly/BeansBay-Apk). </p>
 
 ###
 
