@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/shape_kotak"
+    android:layout_width="200dp"
+    android:maxHeight="260dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="16dp"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    >
+
+    <ImageView
+        android:id="@+id/foto_produk_spotlight"
+        android:layout_width="160dp"
+        android:layout_height="140dp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="20dp"
+        tools:src="@tools:sample/avatars"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp"
+        />
+
+
+    <TextView
+        android:id="@+id/nama_produk_spotlight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/nama_produk"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppins_bold"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_storefront_24"
+
+            />
+
+        <TextView
+            android:id="@+id/nama_toko_spotlight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/toko_produk"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/red_bb"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/harga_produk_spotlight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/harga_produk"
+        android:textColor="@color/red"
+        android:fontFamily="@font/poppins_semibold"
+        android:textStyle="bold"
+        android:layout_gravity="end"
+        android:textSize="12sp"
+        android:layout_marginEnd="8dp"
+        />
+</LinearLayout>

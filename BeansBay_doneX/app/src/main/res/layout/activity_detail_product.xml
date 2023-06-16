@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.detail.DetailProduct"
+    android:background="@drawable/bgchekout"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="16dp"
+            android:background="@drawable/img"
+            >
+
+            <EditText
+                android:id="@+id/search_bar_input"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:background="@null"
+                />
+
+            <ImageButton
+                android:id="@+id/button_search"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_search_24"
+                android:background="@null"
+
+                />
+        </LinearLayout>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginLeft="24dp"
+            app:cardCornerRadius="20dp"
+            >
+
+            <ImageView
+                android:id="@+id/foto_produk"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/product_1"
+                android:scaleType="centerCrop"
+                />
+
+        </androidx.cardview.widget.CardView>
+        <ProgressBar
+            android:id="@+id/loading"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintVertical_bias="0.5" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            >
+
+            <TextView
+                android:id="@+id/nama_produk"
+                android:textColor="@color/black"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="@string/nama_produk"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/icon_toko"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_storefront_24"
+                app:layout_constraintStart_toStartOf="@id/nama_produk"
+                app:layout_constraintTop_toBottomOf="@id/nama_produk"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nama_toko_produk"
+                android:text="@string/toko_produk"
+                android:fontFamily="@font/poppins_regular"
+                app:layout_constraintStart_toEndOf="@id/icon_toko"
+                app:layout_constraintTop_toTopOf="@id/icon_toko"
+                app:layout_constraintBottom_toBottomOf="@id/icon_toko"
+                android:textColor="@color/red_bb"
+                android:layout_marginStart="8dp"
+                />
+
+            <TextView
+                android:id="@+id/harga_produk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/harga_produk"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/red"
+                android:textSize="14sp"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="30dp"
+            android:layout_margin="16dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/product_s_details"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:id="@+id/deskripsi_produk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/deskripsi_produk"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    />
+
+                <TextView
+                    android:id="@+id/aroma_produk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Aroma Produk"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:id="@+id/skor_aroma"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Skor Aroma"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:id="@+id/asam_produk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Asam Produk"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black"
+                    />
+
+
+                <TextView
+                    android:id="@+id/skor_asam"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Skor Asam"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:id="@+id/kategori_produk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kategori Produk"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:id="@+id/asal_produk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Asal Produk"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black"
+                    />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:padding="16dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/customer_review"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_review"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Related Product"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_rec_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:id="@+id/TVKurang"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/icon_minus"
+                app:layout_constraintStart_toStartOf="@+id/teksqty"
+                app:layout_constraintTop_toBottomOf="@+id/teksqty" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:textSize="14sp"
+                android:text="0"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/TVKurang"
+                app:layout_constraintEnd_toStartOf="@+id/TVTambah"
+                app:layout_constraintTop_toTopOf="@+id/TVKurang"
+                app:layout_constraintBottom_toBottomOf="@id/TVKurang"/>
+
+            <ImageView
+                android:id="@+id/TVTambah"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/icon_plus"
+                app:layout_constraintBottom_toBottomOf="@+id/textView2"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
+                app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+
+            <Button
+                android:id="@+id/add_to_bag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/red_bb"
+                android:text="Add to Bag"
+                android:layout_marginStart="16dp"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</ScrollView>
