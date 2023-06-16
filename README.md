@@ -98,9 +98,7 @@
 
 <p align="left">1. Pull the project from android  or download from this link https://github.com/isroabdillah/BeansBay.git</p>
 <p align="left">2. Open In Android studio</p>
-<p align="left">Or you can directly install the application here [apk](https://apkfab.com/beansbaynofont/com.example.beansbay/apk?h=aa6fb1dbe4d9b907945348725cf413aaaf89bff9c18c71fe99a0f68c6bc6bf42). </p>
-
-Or you can directly install the application here.
+<p align="left">Or you can directly install the application here (https://bit.ly/BeansBay-Apk). </p>
 
 ###
 
