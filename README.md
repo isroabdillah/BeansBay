@@ -227,7 +227,8 @@ Please note that the dataset links provided are subject to change, and it's reco
 * [Google App Engine](https://cloud.google.com/appengine): Google App Engine is a fully managed serverless platform that allows you to build and deploy applications with ease. It abstracts away the underlying infrastructure, enabling you to focus on writing code rather than managing servers.
 * [Google Cloud Storage](https://cloud.google.com/storage): Google Cloud Storage is an object storage service provided by Google Cloud Platform. It offers highly scalable and durable storage for your data, allowing you to store and retrieve files and multimedia content with ease.
 
-Additional Dependencies:
+<h3 align="left">Additional Dependencies:</h3>
+
 - `bcrypt`: The `bcrypt` package provides password hashing functionality, allowing you to securely store and compare passwords.
 - `body-parser`: The `body-parser` middleware parses incoming request bodies in formats such as JSON, making it easier to handle data sent from client-side forms.
 - `dotenv`: The `dotenv` module loads environment variables from a `.env` file into `process.env`, making it convenient for storing sensitive information.
