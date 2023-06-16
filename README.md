@@ -119,14 +119,19 @@
 <h3 align="left">Steps To Generate Model</h3>
 
 <p align="left">1. Open Google Colaboratory or download from this link </p>
-<p align="left">2. </p>
+<p align="left">2. Preprocess and clean the datasets according to your code's requirement</p>
+<p align="left">3. Customize the downloaded linked dataset links by integrating them in the #Load The Data section of each code</p>
+<p align="left">4. Build and train the machine learning models in section #Data Train or wherever the models do the training data</p>
+<p align="left">5. Incorporate the trained models into your application to provide personalized recommendations and find similar products based on user preferences</p>
+
+Please note that the dataset links provided are subject to change, and it's recommended to download and store the datasets locally for smooth integration with your application.
 
 ###
 
 <h3 align="left">Featured Technologies</h3>
 
-* [Tensorflow](kotlinlang.org): 
-* [Keras](square.github.io): 
+* [Tensorflow](kotlinlang.org): TensorFlow is an open-source machine learning framework that provides a wide range of tools and libraries for building and deploying machine learning models. In BeansBay, TensorFlow is used for training and implementing the recommendation system and similar product models.
+* [Keras](square.github.io): Keras is a high-level neural networks API that runs on top of TensorFlow. In BeansBay, Keras is utilized in conjunction with TensorFlow to enhance the accuracy and performance of the machine learning models.
 
 ###
 
