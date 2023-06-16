@@ -118,11 +118,11 @@
 
 <h3 align="left">Steps To Generate Model</h3>
 
-<p align="left">1. Open Google Colaboratory or download from this link </p>
-<p align="left">2. Preprocess and clean the datasets according to your code's requirement</p>
-<p align="left">3. Customize the downloaded linked dataset links by integrating them in the #Load The Data section of each code</p>
-<p align="left">4. Build and train the machine learning models in section #Data Train or wherever the models do the training data</p>
-<p align="left">5. Incorporate the trained models into your application to provide personalized recommendations and find similar products based on user preferences</p>
+* <p align="left">Open Google Colaboratory or download from this link </p>
+* <p align="left">Preprocess and clean the datasets according to your code's requirement</p>
+* <p align="left">Customize the downloaded linked dataset links by integrating them in the Load The Data section of each code</p>
+* <p align="left">Build and train the machine learning models in section #Data Train or wherever the models do the training data</p>
+* <p align="left">Incorporate the trained models into your application to provide personalized recommendations and find similar products based on user preferences</p>
 
 Please note that the dataset links provided are subject to change, and it's recommended to download and store the datasets locally for smooth integration with your application.
 
