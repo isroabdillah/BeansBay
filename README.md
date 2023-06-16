@@ -111,3 +111,21 @@
 * [Retrofit](square.github.io): Retrofit is the class through which your API interfaces are turned into callable objects
 
 ###
+
+<h2 align="left">Machine Learning</h2>
+
+### 
+
+<h3 align="left">Steps To Generate Model</h3>
+
+<p align="left">1. Open Google Colaboratory or download from this link </p>
+<p align="left">2. </p>
+
+###
+
+<h3 align="left">Featured Technologies</h3>
+
+* [Tensorflow](kotlinlang.org): 
+* [Keras](square.github.io): 
+
+###
