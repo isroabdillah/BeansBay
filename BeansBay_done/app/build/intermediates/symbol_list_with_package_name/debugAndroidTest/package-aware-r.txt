@@ -1,3 +1,0 @@
-com.example.beansbay.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme
