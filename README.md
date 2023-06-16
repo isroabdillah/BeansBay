@@ -1,197 +1,510 @@
-## "Jual Beli Kopi" Application API Documentation
+## "BeansBay" Application API Documentation
 
 This repository contains the code for the "Jual Beli Kopi" application's backend API. The API is developed using Node.js with the Express framework and is responsible for handling various functionalities related to product management, user interactions, and cart management. Below is a detailed documentation of the available API endpoints and their usage:
 
 ### API Endpoints
 
-#### 1. Search for Products
+#### 1. Welcome
+- Base URL: `https://capstone-4cffc.et.r.appspot.com/`
+- Metode: GET
+- Endpoint: `/`
+- Contoh Permintaan:
+  ```
+  curl -X GET https://capstone-4cffc.et.r.appspot.com/
+  ```
+  ```
+  curl -X GET -L https://capstone-4cffc.et.r.appspot.com/
+  ```
+- Parameter: Tidak ada parameter yang diperlukan.
+- Respon:
+  ```
+  Selamat Datang di API Kegelapan
+  ```
 
-- *Endpoint:* `GET /api/products/search`
-- *Description:* Search for products based on a provided name query parameter.
-- *Parameters:*
-  - `name` (required): The name of the product to search for.
-- *Example:*
-  javascript
+#### 2. Registrasi User
+- Base URL: `https://capstone-4cffc.et.r.appspot.com/api/register`
+- Metode: POST
+- Endpoint: `/api/register`
+- Tipe Konten: `application/json`
+- Body Permintaan:
+  ```json
+  {
+    "username": "kenangan",
+    "email": "kenangan@gmail.com",
+    "password": "kenangan",
+    "jenisKelamin": "Laki-laki",
+    "kategoriProduk": "Arabika",
+    "skorAroma": "6",
+    "aroma": "Sangat kuat",
+    "skorAsam": "8",
+    "asam": "Sedang"
+  }
+  ```
+- Contoh Permintaan:
+  ```
+  curl -X POST -H "Content-Type: application/json" -d '{
+    "username": "kenangan",
+    "email": "kenangan@gmail.com",
+    "password": "kenangan",
+    "jenisKelamin": "Laki-laki",
+    "kategoriProduk": "Arabika",
+    "skorAroma": "6",
+    "aroma": "Sangat kuat",
+    "skorAsam": "8",
+    "asam": "Sedang"
+  }' https://capstone-4cffc.et.r.appspot.com/api/register
+  ```
+- Respon:
+  ```
+  {
+    "message": "Pendaftaran berhasil"
+  }
+  ```
+#### 3. Login
+- Base URL: `https://capstone-4cffc.et.r.appspot.com/api/login`
+- Metode: POST
+- Endpoint: `/api/login`
+- Tipe Konten: `application/json`
+- Body Permintaan:
+  ```json
+  {
+    "email": "kemenangan@gmail.com",
+    "password": "kemenangan I'"
+  }
+  ```
+- Contoh Permintaan:
+  ```
+  curl -X POST -H "Content-Type: application/json" -d '{
+    "email": "kegelapan@gmail.com",
+    "password": "kegelapan"
+  }' https://capstone-4cffc.et.r.appspot.com/api/login
+  ```
+- Respon:
+  ```json
+  {
+    "message": "Login berhasil",
+    "token": "eyJhbGciOiJIUz11Ni1s1nv-'*T'T'--Vl'CJ9.eyJpYXQiOjE20DY€NjAxMTF9.xgtJOJ9N"
+  }
+  ```
+#### 4. Logout
+- Metode: POST
+- Endpoint: `/api/logout`
+- Contoh Permintaan:
+  ```shell
+  curl -X POST https://capstone-acffc.et.r.appspot.com/api/logout
+  ```
+  ```shell
+  curl -X POST -L https://capstone-acffc.et.r.appspot.com/api/logout
+  ```
+- Respon:
+  - Headers (8)
+  - Body:
+    ```
+    Logout berhasil
+    ```
 
-  app.get("/api/products/search", (req, res) => {
-    const { name } = req.query;
-
-    if (!name) {
-      res.status(400).json({ error: "Parameter name harus diberikan" });
-      return;
+#### 5. Memeriksa User Login/Tidak
+- Metode: GET
+- Endpoint: `/api/check-login`
+- Contoh Permintaan:
+  ```shell
+  curl -X GET https://capstone-acffc.et.r.appspot.com/api/check-login
+  ```
+  ```shell
+  curl -X GET -L https://capstone-acffc.et.r.appspot.com/api/check-login
+  ```
+- Respon:
+  - Headers (8)
+  - Body:
+    ```json
+    {
+      "loggedln": true,
+      "message": "Pengguna sudah login"
     }
+    ```
+  
+#### 6. Mendapatkan Semua Produk
+   - Metode: GET
+   - Endpoint: `/api/products`
+   - Contoh Permintaan:
+     ```shell
+     curl -X GET https://capstone-acffc.et.r.appspot.com/api/products
+     ```
+     ```shell
+     curl -X GET -L https://capstone-acffc.et.r.appspot.com/api/products
+     ```
+   - Respon:
+     - Headers (8)
+     - Body:
+       ```json
+       {
+         "asam": "Sedang",
+         "namaProduk": "Kopi Arabika Sumatera",
+         "skorAroma": 8,
+         "asalProduk": "Sumatera Utara",
+         "skorAsam": 6,
+         "hargaDalamDolar": 15.99,
+         "aroma": "Sangat kuat",
+         "jenisProduk": "Biji kopi"
+       }
+       ```
 
-    const filteredProducts = products.filter((product) =>
-      product.name.toLowerCase().includAes(name.toLowerCase())
-    );
-    res.json(filteredProducts);
-  });
   
 
-#### 2. Get All Products
-
-- *Endpoint:* `GET /api/products`
-- *Description:* Get the list of all available products.
-- *Example:*
-  javascript
-
-  app.get("/api/products", (req, res) => {
-    res.json(products);
-  });
+#### 7. Mencari Produk Berdasarkan Nama
+- Metode: GET
+- Endpoint: `/api/products/search`
+- Contoh Permintaan:
+  ```shell
+  curl "https://capstone-4cffc.et.r.appspot.com/api/products/search?name=kopi luwak"
+  ```
+- Respon:
+  - Headers (8)
+  - Body:
+    ```json
+    {
+      "asam": "Sedang",
+      "namaProduk": "Kopi Luwak",
+      "skorAroma": 8,
+      "asalProduk": "Indonesia",
+      "hargaRupiah": 149985,
+      "skorAsam": 6,
+      "hargaDolar": 200.0,
+      "aroma": "Sangat kuat"
+    }
+    ```
   
 
-#### 3. Get Product Details
+#### 8. Melihat Detail Produk
+- Metode: GET
+- Endpoint: `/api/products/:id`
+- Contoh Permintaan:
+  ```shell
+  curl https://capstone-4cffc.et.r.appspot.com/api/products/:id
+  ```
+  atau
+  ```shell
+  curl -L https://capstone-4cffc.et.r.appspot.com/api/products/produkl
+  ```
+- PATH VARIABLES:
+  - id
+- Respon:
+  - Headers (8)
+  - Body:
+    ```json
+    {
+      "id": "produkl",
+      "asam": "Sedang",
+      "namaProduk": "Kopi Arabika Sumatera",
+      "skorAroma": 8,
+      "asalProduk": "Sumatera Utara",
+      "skorAsam": 6,
+      "hargaDolar": 15.99,
+      "aroma": "Sangat kuat",
+      "deskripsiProduk": "Biji kopi dengan cita rasa tinggi dan aroma yang kaya"
+    }
+    ```
 
-- *Endpoint:* `GET /api/products/:id`
-- *Description:* Get the details of a specific product based on its ID.
-- *Parameters:*
-  - `id` (required): The ID of the product to retrieve.
-- *Example:*
-  javascript
-
-  app.get("/api/products/:id", (req, res) => {
-  const id = parseInt(req.params.id);
-  const product = products.find((p) => p.id === id);
-
-  if (product) {
-    res.json(product);
-  } else {
-    res.status(404).json({ error: "Produk tidak ditemukan" });
+9. Menambahkan Produk Ke Keranjang
+- Metode: POST
+- Endpoint: `/api/cart`
+- Contoh Permintaan:
+  ```shell
+  curl -X POST -H "Content-Type: application/json" -d '{"quantity": "2"}' https://capstone-4cffc.et.r.appspot.com/api/cart
+  ```
+- Body:
+  ```json
+  {
+    "quantity": "2"
   }
-});
-  
-
-#### 4. Add Product to Cart
-
-- *Endpoint:* `POST /api/cart`
-- *Description:* Add a product to the user's cart.
-- *Request Body:*
-  - `productId` (required): The ID of the product to add to the cart.
-  - `quantity` (optional): The quantity of the product to add (default: 1).
-- *Example:*
-  javascript
-
-  app.post("/api/cart", (req, res) => {
-  const { productId, quantity } = req.body;
-  const product = products.find((p) => p.id === productId);
-
-  if (!product) {
-    res.status(404).json({ error: "Produk tidak ditemukan" });
-    return;
+  ```
+- Respon:
+  - Headers (8)
+  - Body:
+    ```json
+    {
+      "message": "Produk telah ditambahkan ke keranjang"
+    }
+    ```
+    atau
+    ```json
+    {
+      "status": 201,
+      "message": "Produk telah ditambahkan ke keranjang"
+    }
+    ```
+10. Mendapatkan Produk di Keranjang
+- Metode: GET
+- Endpoint: `/api/cart`
+- Contoh Permintaan:
+  ```shell
+  curl -X GET https://capstone-4cffc.et.r.appspot.com/api/cart
+  ```
+  atau
+  ```shell
+  curl -L https://capstone-4cffc.et.r.appspot.com/api/cart
+  ```
+- Respon:
+  - Headers (8)
+  - Body:
+    ```json
+    {
+      "cartItems": [
+        {
+          "quantity": 2,
+          "productld": "produk7",
+          "userld": "kegelapan@gmail.com",
+          "totalHarga": 14997,
+          "url": "https://storage.googleapis.com/bucket-gambar/Produk1.png"
+        }
+      ]
+    }
+    ```
+    atau
+    ```json
+    {
+      "status": 200,
+      "cartItems": [
+        {
+          "quantity": 2,
+          "productld": "produk7",
+          "userld": "kegelapan@gmail.com",
+          "totalHarga": 14997,
+          "url": "https://storage.googleapis.com/bucket-gambar/Produk1.png"
+        }
+      ]
+    }
+    ```
+11. Kurangi Jumlah, Hapus Produk Pada Keranjang
+- Metode: DELETE
+- Endpoint: `/api/cart/:productld`
+- Contoh Permintaan:
+  ```shell
+  curl -X DELETE https://capstone-4cffc.et.r.appspot.com/api/cart/:productld
+  ```
+- PATH VARIABLES:
+  - productld
+- Respon:
+  - Headers (8)
+  - Body:
+    ```json
+    {
+      "message": "Quantity produk telah dikurangi"
+    }
+    ```
+    atau
+    ```json
+    {
+      "status": 200,
+      "message": "Quantity produk telah dikurangi"
+    }
+    ```
+12. Menambahkan Review Produk
+- Metode: POST
+- Endpoint: `/api/products/:productld/reviews`
+- Contoh Permintaan:
+  ```shell
+  curl -X POST -H "Content-Type: application/json" -d '{"rating": 5, "comment": "terlalu asoy"}' https://capstone-4cffc.et.r.appspot.com/api/products/produk7/reviews
+  ```
+- PATH VARIABLES:
+  - productld
+- Body:
+  ```json
+  {
+    "rating": 5,
+    "comment": "terlalu asoy"
   }
+  ```
+- Respon:
+  - Headers (8)
+  - Body:
+    ```json
+    {
+      "status": 200,
+      "reviewld": "nsps0igDvZ8NjJibAmRF",
+      "comment": "terlalu asoy"
+    }
+    ```
+13. Rekomendasi Api Dari ML
+- Metode: GET
+- Endpoint: `/api/recommendation`
+- Contoh Permintaan:
+  ```shell
+  curl -X GET https://capstone-4cffc.et.r.appspot.com/api/recommendation?idProduk=P003&dk=P021
+  ```
+- Query Parameters:
+  - idProduk: P003
+  - dk: P021
+- Respon:
+  - Headers (11)
+  - Body:
+    ```json
+    {
+      "results": [
+        {
+          "predicted_idProduk": "P003"
+        },
+        {
+          "predicted_idProduk": "P004"
+        },
+        {
+          "predicted_idProduk": "P021"
+        },
+        {
+          "predicted_idProduk": "P016"
+        },
+        {
+          "predicted_idProduk": "P038"
+        }
+      ],
+      "products": [
+        {
+          "namaProduk": "Kopi Single Origin Ethiopia",
+          "asam": "Kuat",
+          "skorAroma": 9,
+          "skorAsam": 8,
+          "asalProduk": "Ethiopia",
+          "hargaRupiah": 284850,
+          "hargaDollar": 18.99,
+          "kategoriProduk": "Arabika",
+          "url": "https://storage.googleapis.com/bucket-gambar/Produk3.jpg",
+          "deskripsiProduk": "Biji kopi Arabika murni dari Ethiopia yang terkenal dengan cita rasa buah-buahan yang kuat. Kopi ini memiliki aroma bunga yang menarik dan tingkat keasaman yang tinggi, memberikan pengalaman yang unik bagi para pecinta kopi.",
+          "aroma": "Sangat intens",
+          "toko": "toko3"
+        },
+        {
+          "namaProduk": "Kopi Luwak",
+          "asam": "Sedang",
+          "skorAroma": 8,
+          "skorAsam": 6,
+          "asalProduk": "Indonesia",
+          "hargaRupiah": 1499850,
+          "hargaDollar": 99.99,
+          "kategoriProduk": "Luwak",
+          "url": "https://storage.googleapis.com/bucket-gambar/Produk4.jpg",
+          "deskripsiProduk": "Kopi Luwak terkenal karena proses uniknya. Biji kopi yang telah dikonsumsi oleh musang luwak diproses melalui pencernaan hewan tersebut sebelum ditemukan dalam kotorannya. Kopi ini memiliki rasa yang halus, rendah keasaman, dan aroma yang kaya.",
+          "aroma": "Sangat kuat",
+          "toko": "toko4"
+        },
+        {
+          "asam": "Kuat",
+          "namaProduk": "Kopi Yirgacheffe",
+          "skorAroma": 9,
+          "hargaRupiah": 269850,
+          "asalProduk": "Ethiopia",
+          "skorAsam": 8,
+          "hargaDollar": 17.99,
+          "url": "https://storage.googleapis.com/bucket-gambar/Produk16.jpg",
+          "aroma": "Sangat intens",
+          "kategoriProduk": "Arabika",
+          "deskripsiProduk": "Biji kopi Arabika dari wilayah Yirgacheffe di Ethiopia. Kopi Yirgacheffe terkenal dengan rasa yang berani dan kompleks, dengan keasaman yang tinggi, serta aroma yang beragam seperti buah-buahan, bunga, dan cokelat.",
+          "toko": "toko16"
+        },
+        {
+          "asam": "Cukup kuat",
+          "namaProduk": "Kopi Arabika Brazil",
+          "skorAroma": 7,
+          "asalProduk": "Brasil",
+          "hargaRupiah": 224850,
+          "skorAsam": 7,
+          "hargaDollar": 14.99,
+          "kategoriProduk": "Arabika",
+          "url": "https://storage.googleapis.com/bucket-gambar/Produk21.jpg",
+          "aroma": "Kuat",
+          "deskripsiProduk": "Biji kopi Arabika yang ditanam di daerah pegunungan Brasil. Kopi ini memiliki rasa yang lembut dengan sentuhan cokelat dan karamel, serta aroma yang kaya dan khas.",
+          "toko": "toko21"
+        },
+        {
+          "namaProduk": "Kopi Espresso Blend",
+          "asam": "Sedang",
+          "skorAsam": 6,
+          "asalProduk": "Berbagai Negara",
+          "toko": "toko38",
+          "hargaDollar": 15.99,
+          "kategoriProduk": "Campuran",
+          "deskripsiProduk": "Campuran biji kopi Arabika dan Robusta dari berbagai negara seperti Brasil, Kosta Rika, dan India. Kopi Espresso Blend ini cocok untuk penyeduhan espresso dengan cita rasa yang kuat, keasaman sedang, dan aroma yang kaya.",
+          "url": "https://storage.googleapis.com/bucket-gambar/Produk38.jpg",
+          "hargaRupiah": 239850,
+          "aroma": "Sangat intens",
+          "skorAroma": 9
+        }
+      ]
+    }
+    ```
+14. Produk Serupa API dari Ml 
+- Metode: GET
+- Endpoint: `/api/similar`
+- Contoh Permintaan:
+  ```shell
+  curl -X GET https://capstone-4cffc.et.r.appspot.com/api/similar
+  ```
+- Respon:
+  - Headers (11)
+  - Body:
+    ```json
+    {
+      "similar": [
+        {
+          "predicted_idProduk": "P003"
+        },
+        {
+          "predicted_idProduk": "P002"
+        },
+        {
+          "predicted_idProduk": "P001"
+        }
+      ],
+      "products": [
+        {
+          "namaProduk": "Kopi Arabika Sumatera",
+          "asam": "Sedang",
+          "reviews": [
+            "RfUX5spGjd0UETyBO8df",
+            "j8fOnxfPMwg7QwS6EBDA",
+            "UjS7dLwnGNR4Wo7IWrQU"
+          ],
+          "skorAroma": 8,
+          "asalProduk": "Sumatera Utara",
+          "hargaRupiah": 239850,
+          "skorAsam": 6,
+          "hargaDollar": 15.99,
+          "url": "https://storage.googleapis.com/bucket-gambar/Produk1.png",
+          "aroma": "Sangat kuat",
+          "kategoriProduk": "Arabika",
+          "deskripsiProduk": "Biji kopi arabika berkualitas tinggi dengan aroma yang kaya dan cita rasa yang kompleks. Ditanam di dataran tinggi Sumatera, memberikan sentuhan unik dengan karakteristik bumi yang kuat",
+          "toko": "toko1"
+        },
+        {
+          "asam": "Cukup Kuat",
+          "namaProduk": "Kopi Robusta Vietnam",
+          "skorAroma": 7,
+          "asalProduk": "Vietnam",
+          "skorAsam": 7,
+          "hargaRupiah": 194850,
+          "hargaDollar": 12.99,
+          "deskripsiProduk": "Biji kopi Robusta yang tumbuh subur di daerah pegunungan Vietnam. Kopi ini memiliki keasaman yang rendah, kandungan kafein yang tinggi, dan cenderung memiliki rasa yang lebih pahit dibandingkan dengan biji kopi Arabika.",
+          "url": "https://storage.googleapis.com/bucket-gambar/Produk2.jpg",
+          "kategoriProduk": "Robusta",
+          "aroma": "Kuat",
+          "toko": "toko2"
+        },
+        {
+          "namaProduk": "Kopi Single Origin Ethiopia",
+          "asam": "Kuat",
+          "skorAroma": 9,
+          "skorAsam": 8,
+          "asalProduk": "Ethiopia",
+          "hargaRupiah": 284850,
+          "hargaDollar": 18.99,
+          "kategoriProduk": "Arabika",
+          "url": "https://storage.googleapis.com/bucket-gambar/Produk3.jpg",
+          "deskripsiProduk": "Biji kopi Arabika murni dari Ethiopia yang terkenal dengan cita rasa buah-buahan yang kuat. Kopi ini memiliki aroma bunga yang menarik dan tingkat keasaman yang tinggi, memberikan pengalaman yang unik bagi para pecinta kopi.",
+          "aroma": "Sangat intens",
+          "toko": "toko3"
+        }
+      ]
+    }
+    ```
 
-  const cartItem = {
-    productId: product.id,
-    name: product.name,
-    price: product.price,
-    quantity: quantity || 1,
-  };
 
-  cartItems.push(cartItem);
-  res.status(201).json(cartItem);
-});
-  
 
-#### 5. Get Cart Items
-
-- *Endpoint:* `GET /api/cart`
-- *Description:* Get the list of products in the user's cart.
-- *Example:*
-  javascript
-
-  app.get("/api/cart", (req, res) => {
-  res.json(cartItems);
-});
-  
-
-#### 6. Remove Product from Cart
-
-- *Endpoint:* `DELETE /api/cart/:productId`
-- *Description:* Remove a product from the user's cart based on its ID.
-- *Parameters:*
-  - `productId` (required): The ID of the product to remove from the cart.
-- *Example:*
-  javascript
-
-  app.delete("/api/cart/:productId", (req, res) => {
-  const productId = parseInt(req.params.productId);
-  const index = cartItems.findIndex((item) => item.productId === productId);
-
-  if (index !== -1) {
-    cartItems.splice(index, 1);
-    res.status(204).json({ message: "Produk telah terhapus dari keranjang" });
-  } else {
-    res.status(404).json({ error: "Produk tidak ditemukan dalam keranjang" });
-  }
-});
-  
-
-#### 7. Calculate Cart Total
-
-- *Endpoint:* `GET /api/cart/total`
-- *Description:* Calculate the total price of all products in the user's cart.
-- *Example:*
-  javascript
-
-  app.get("/api/cart/total", (req, res) => {
-  const total = cartItems.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  );
-  res.json({ total });
-});
-  
-
-#### 8. Checkout Cart
-
-- *Endpoint:* `POST /api/cart/checkout`
-- *Description:* Complete the purchase by emptying the user's cart.
-- *Example:*
-  javascript
-
-  app.post("/api/cart/checkout", (req, res) => {
-  if (cartItems.length === 0) {
-    const response = {
-      success: false,
-      message: "Tidak ada produk di keranjang",
-    };
-    return res.status(400).json(response);
-  }
-
-  try {
-    // Proses pembayaran dan lainnya...
-    // Setelah pembelian berhasil, Anda dapat mengosongkan keranjang:
-    cartItems = [];
-    const response = {
-      success: true,
-      message: "Pembelian Berhasil",
-    };
-    res.status(200).json(response);
-  } catch (error) {
-    console.error("Terjadi kesalahan saat checkout:", error);
-    const response = {
-      success: false,
-      message: "Terjadi kesalahan saat checkout",
-    };
-    res.status(500).json(response);
-  }
-});
-  
-
-### How to Use the APIs
-
-1. Search for Products: Send a GET request to `/api/products/search` with the `name` query parameter to search for products with a specific name.
-
-2. Get All Products: Send a GET request to `/api/products` to retrieve the list of all available products.
-
-3. Get Product Details: Send a GET request to `/api/products/:id`, where `:id` is the ID of the product, to get the details of a specific product.
-
-4. Add Product to Cart: Send a POST request to `/api/cart` with the `productId` and `quantity` (optional) in the request body to add a product to the user's cart.
-
-5. Get Cart Items: Send a GET request to `/api/cart` to get the list of products in the user's cart.
-
-6. Remove Product from Cart: Send a DELETE request to `/api/cart/:productId`, where `:productId` is the ID of the product, to remove a product from the user's cart.
-
-7. Calculate Cart Total: Send a GET request to `/api/cart/total` to calculate the total price of all products in the user's cart.
-
-8. Checkout Cart: Send a POST request to `/api/cart/checkout` to complete the purchase by emptying the user's cart.
