@@ -141,8 +141,8 @@ Both of these datasets are secondary datasets.
 
 <h3 align="left">Featured Technologies</h3>
 
-* [Tensorflow]: TensorFlow is an open-source machine learning framework that provides a wide range of tools and libraries for building and deploying machine learning models. In BeansBay, TensorFlow is used for training and implementing the recommendation system and similar product models.
-* [Keras]: Keras is a high-level neural networks API that runs on top of TensorFlow. In BeansBay, Keras is utilized in conjunction with TensorFlow to enhance the accuracy and performance of the machine learning models.
+* Tensorflow: TensorFlow is an open-source machine learning framework that provides a wide range of tools and libraries for building and deploying machine learning models. In BeansBay, TensorFlow is used for training and implementing the recommendation system and similar product models.
+* Keras: Keras is a high-level neural networks API that runs on top of TensorFlow. In BeansBay, Keras is utilized in conjunction with TensorFlow to enhance the accuracy and performance of the machine learning models.
 
 ###
 
